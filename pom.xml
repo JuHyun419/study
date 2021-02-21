@@ -12,6 +12,7 @@
     <modules>
         <module>Programmers</module>
         <module>LeetCode</module>
+        <module>BaekJoon</module>
     </modules>
 
 
