@@ -2,6 +2,14 @@ package level2;
 
 public class 다음_큰_숫자 {
 
+    public static int solution2(int n) {
+        for (int i = n + 1; ; i++) {
+            if (Integer.bitCount(n) == Integer.bitCount(i)) {
+                return i;
+            }
+        }
+    }
+
     public static int solution(int n) {
         int defaultZeroCount = countOne(n);
         int compareZeroCount;
@@ -16,7 +24,7 @@ public class 다음_큰_숫자 {
     private static int countOne(int n) {
         int result = 0;
         while (n != 0) {
-            result += n%2 == 0 ? 0 : 1;
+            result += (n % 2) == 0 ? 0 : 1;
             n /= 2;
         }
         return result;
