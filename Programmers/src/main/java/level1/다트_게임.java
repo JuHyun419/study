@@ -1,6 +1,5 @@
 package level1;
 
-// TODO: 20210312 X
 public class 다트_게임 {
 
     public static int solution(String dartResult) {
