@@ -1,6 +1,5 @@
 package level2;
 
-// TODO: 선행 스킬에 없는 스킬 replace 해서 다시 풀어볼 것
 public class 스킬트리 {
 
     public static int solution(String skill, String[] skillTrees) {
@@ -26,7 +25,7 @@ public class 스킬트리 {
             }
 
             if (isPossibleSkillTree) {
-                answer ++;
+                answer++;
             }
         }
         return answer;
@@ -35,6 +34,5 @@ public class 스킬트리 {
     public static void main(String[] args) {
         String skill = "CBD";
         String[] skillTrees = {"BACDE", "CBADF", "AECB", "BDA"};
-        System.out.println(solution(skill, skillTrees));
     }
 }
