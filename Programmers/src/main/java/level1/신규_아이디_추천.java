@@ -95,9 +95,5 @@ public class 신규_아이디_추천 {
         String test11 = "=.=";
 
         System.out.println(solution(test11));
-
-
-
-
     }
 }
