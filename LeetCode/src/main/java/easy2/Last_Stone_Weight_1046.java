@@ -1,12 +1,30 @@
 package easy2;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 // TODO:
 public class Last_Stone_Weight_1046 {
+
+    public static int lastStoneWeight2(int[] stones) {
+
+        Queue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+
+        for (int stone : stones) {
+            queue.add(stone);
+        }
+
+        while (queue.size() > 1) {
+            int max1 = queue.poll();
+            int max2 = queue.poll();
+
+            if (max1 - max2 != 0) {
+                queue.add(max1 - max2);
+            }
+        }
+
+        return queue.size() == 0 ? 0 : queue.poll();
+    }
 
     public static int lastStoneWeight(int[] stones) {
 
@@ -43,6 +61,5 @@ public class Last_Stone_Weight_1046 {
     public static void main(String[] args) {
         int[] arr = {2, 7, 4, 1, 8, 1};
 
-        System.out.println(lastStoneWeight(arr));
     }
 }
