@@ -1,5 +1,8 @@
 package silver;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class DFS와BFS_1260 {
@@ -20,8 +23,22 @@ public class DFS와BFS_1260 {
         }
     }
 
-    public static void bfs() {
+    public static void bfs(int i) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(i);
+        visit[i] = true;
 
+        while (!queue.isEmpty()) {
+            int temp = queue.poll();
+            System.out.print(temp + " ");
+
+            for (int j = 1; j <= N; j++) {
+                if (map[temp][j] == 1 && !visit[j]) {
+                    queue.offer(j);
+                    visit[j] = true;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -38,6 +55,9 @@ public class DFS와BFS_1260 {
             map[a][b] = map[b][a] = 1;
         }
 
-        dfs(V);
+        //dfs(V);
+        Arrays.fill(visit, false);
+        System.out.println();
+        bfs(V);
     }
 }
