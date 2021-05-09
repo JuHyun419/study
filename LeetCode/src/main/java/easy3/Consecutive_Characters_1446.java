@@ -9,6 +9,7 @@ public class Consecutive_Characters_1446 {
         for (int i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) == s.charAt(i + 1)) {
                 consecutiveCount++;
+                max = Math.max(max, consecutiveCount);
             } else {
                 max = Math.max(max, consecutiveCount);
                 consecutiveCount = 1;
