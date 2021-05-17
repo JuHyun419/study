@@ -2,7 +2,6 @@ package kit.bruteforce;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class 모의고사 {
@@ -28,8 +27,6 @@ public class 모의고사 {
                 list.add((i + 1));
             }
         }
-
-        Collections.sort(list);
 
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
