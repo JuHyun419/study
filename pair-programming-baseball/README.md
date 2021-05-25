@@ -26,6 +26,7 @@
   - [Mathpresso 개발방법론 - 페어프로그래밍](https://blog.mathpresso.com/mathpresso-%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0-1-%ED%8E%98%EC%96%B4-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-pair-programing-f7d07ac323d0)
   - [Agile 짝 프로그래밍](https://gmlwjd9405.github.io/2018/07/02/agile-pair-programming.html)
   - [우아한테크코스 페어프로그래밍 회고](https://pjh3749.tistory.com/247)
+  - [짝프로그래밍을 통해 자라기](https://techblog.deepnatural.ai/2021/04/19/pair-programming)
 
 <br><br>
 
