@@ -1,34 +1,25 @@
 package easy2;
 
-import java.util.Arrays;
-
-// TODO:
 public class Distribute_Candies_to_People_1103 {
-    public static int[] distributeCandies(int candies, int num_people) {
-        int[] result = new int[num_people];
-        int distributeCount = 1;
-
+    public static int[] distributeCandies(int candies, final int num_people) {
+        final int[] result = new int[num_people];
+        int given = 1;
         while (candies > 0) {
             for (int i = 0; i < num_people; i++) {
-                if (distributeCount > candies) {
+                if (isNotDistributeCandy(given, candies)) {
                     result[i] += candies;
                     candies = 0;
                     break;
-                } else {
-                    candies -= distributeCount;
-                    result[i] += distributeCount++;
                 }
+                result[i] += given;
+                candies -= given;
+                given++;
             }
         }
-
         return result;
     }
 
-    public static void main(String[] args) {
-        int candies = 7;
-        int num = 4;
-
-        int[] arr = distributeCandies(candies, num);
-        System.out.println(Arrays.toString(arr));
+    private static boolean isNotDistributeCandy(final int given, final int candy) {
+        return given > candy;
     }
 }
