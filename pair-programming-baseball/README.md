@@ -75,7 +75,9 @@ e.g) 상대방(컴퓨터)의 수가 425일 때,
 3개의 숫자를 모두 맞히셨습니다! 게임 종료
 ```
 
-<br>
+## 이슈사항
+
+<br><br>
 
 ### Reference
 https://github.com/woowacourse/java-baseball-precourse
