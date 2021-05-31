@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class 완주하지_못한_선수 {
 
-    public static String solution(String[] participant, String[] completion) {
+    public static String solution(final String[] participant, final String[] completion) {
         Arrays.sort(participant);
         Arrays.sort(completion);
 
@@ -21,9 +21,9 @@ public class 완주하지_못한_선수 {
                 : answer;
     }
 
-    public static void main(String[] args) {
-        String[] participant = {"marina", "josipa", "nikola", "vinko", "filipa"};
-        String[] completion = {"marina", "josipa", "nikola", "filipa"};
+    public static void main(final String[] args) {
+        final String[] participant = {"marina", "josipa", "nikola", "vinko", "filipa"};
+        final String[] completion = {"marina", "josipa", "nikola", "filipa"};
         System.out.println(solution(participant, completion));
     }
 
