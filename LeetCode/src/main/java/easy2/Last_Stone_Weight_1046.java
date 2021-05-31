@@ -3,63 +3,49 @@ package easy2;
 import java.util.*;
 import java.util.stream.Collectors;
 
-// TODO:
 public class Last_Stone_Weight_1046 {
 
-    public static int lastStoneWeight2(int[] stones) {
-
-        Queue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
-
-        for (int stone : stones) {
-            queue.add(stone);
-        }
-
-        while (queue.size() > 1) {
-            int max1 = queue.poll();
-            int max2 = queue.poll();
-
-            if (max1 - max2 != 0) {
-                queue.add(max1 - max2);
-            }
-        }
-
-        return queue.size() == 0 ? 0 : queue.poll();
-    }
-
-    public static int lastStoneWeight(int[] stones) {
-
-        List<Integer> list = toList(stones);
+    // 3ms
+    public static int lastStoneWeight(final int[] stones) {
+        final List<Integer> list = Arrays.stream(stones).boxed().collect(Collectors.toList());
 
         while (list.size() > 1) {
             Collections.sort(list);
-
-            int max1 = list.get(list.size() - 1);
-            int max2 = list.get(list.size() - 2);
-            list.remove((Object) max1);
-            list.remove((Object) max2);
-
-            int newWeight = max1 - max2;
-            if (!isSameWeights(max1, max2)) {
-                list.add(newWeight);
+            final int max = list.get(list.size() - 1);
+            final int secondMax = list.get(list.size() - 2);
+            list.remove((Object) secondMax);
+            list.remove((Object) max);
+            if (max != secondMax) {
+                list.add(max - secondMax);
             }
         }
-
         return list.size() == 0 ? 0 : list.get(0);
     }
 
-    private static List<Integer> toList(final int[] arr) {
-        return Arrays.stream(arr)
-                .boxed()
-                .map(Integer::new)
-                .collect(Collectors.toList());
+    // 1ms
+    public static int lastStoneWeight2(final int[] stones) {
+        final Queue<Integer> queue = arrayToQueue(stones);
+
+        while (queue.size() > 1) {
+            final int max = queue.poll();
+            final int secondMax = queue.poll();
+            if (max != secondMax) {
+                queue.add(max - secondMax);
+            }
+        }
+        return queue.size() == 0 ? 0 : queue.poll();
     }
 
-    private static boolean isSameWeights(final int var1, final int var2) {
-        return var1 == var2;
+    private static PriorityQueue<Integer> arrayToQueue(final int[] array) {
+        final PriorityQueue<Integer> queue = new PriorityQueue<>(Collections.reverseOrder());
+        for (final int arr : array) {
+            queue.add(arr);
+        }
+        return queue;
     }
 
-    public static void main(String[] args) {
-        int[] arr = {2, 7, 4, 1, 8, 1};
-
+    public static void main(final String[] args) {
+        final int[] stones = {2, 7, 4, 1, 8, 1};
+        System.out.println(lastStoneWeight2(stones));
     }
 }
