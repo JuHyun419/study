@@ -1,38 +1,26 @@
 package easy2;
 
-import java.util.Iterator;
-import java.util.Stack;
-
-//TODO: X
+//TODO: X(최적화)
 public class Remove_1047 {
 
-    public static String removeDuplicates(String s) {
-        Stack<Character> stack = new Stack<>();
-
-        for (int i = 0; i < s.length(); i++) {
-            if (stack.isEmpty()) {
-                stack.push(s.charAt(i));
-                continue;
+    public static String removeDuplicates(final String s) {
+        final StringBuilder sb = new StringBuilder(s);
+        while (true) {
+            boolean flag = true;
+            for (int i = 0; i < sb.length() - 1; i++) {
+                if (sb.charAt(i) == sb.charAt(i + 1)) {
+                    sb.delete(i, i + 2);
+                    flag = false;
+                    break;
+                }
             }
-
-            if (stack.peek() == s.charAt(i)) {
-                stack.pop();
-            } else {
-                stack.push(s.charAt(i));
-            }
+            if (flag) break;
         }
-
-        Iterator<Character> iter = stack.iterator();
-        StringBuilder sb = new StringBuilder();
-        while (iter.hasNext()) {
-            sb.append(iter.next().toString());
-        }
-
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        String str = "abbaca";
+    public static void main(final String[] args) {
+        final String str = "azxxzy";
         System.out.println(removeDuplicates(str));
     }
 
