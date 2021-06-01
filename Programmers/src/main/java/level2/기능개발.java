@@ -8,39 +8,31 @@ import java.util.Stack;
 public class 기능개발 {
     private static final int PROCESS = 100;
 
-    public static int[] solution(int[] progresses, int[] speeds) {
-        List<Integer> list = new ArrayList<>();
-        int length = progresses.length;
-        Stack<Integer> stack = new Stack<>();
+    public static int[] solution(final int[] progresses, final int[] speeds) {
+        final List<Integer> list = new ArrayList<>();
+        final int length = progresses.length;
+        final Stack<Integer> stack = new Stack<>();
 
         for (int i = length - 1; i >= 0; i--) {
-            int days = (PROCESS - progresses[i]) / speeds[i];
-            if ((PROCESS - progresses[i]) % speeds[i] != 0) {
-                days += 1;
-            }
+            final int days = (int) Math.ceil((double)(PROCESS - progresses[i]) / speeds[i]);
             stack.push(days);
         }
 
         while (!stack.isEmpty()) {
             int deployCount = 1;
-            int top = stack.pop();
-
+            final int top = stack.pop();
             while (!stack.isEmpty() && stack.peek() <= top) {
                 deployCount ++;
                 stack.pop();
             }
             list.add(deployCount);
-
         }
-
-        return list.stream()
-                .mapToInt(Integer::intValue)
-                .toArray();
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    public static void main(String[] args) {
-        int[] progresses = {95, 90, 99, 99, 80, 99};
-        int[] speeds = {1, 1, 1, 1, 1, 1};
+    public static void main(final String[] args) {
+        final int[] progresses = {95, 90, 99, 99, 80, 99};
+        final int[] speeds = {1, 1, 1, 1, 1, 1};
 
         System.out.println(Arrays.toString(solution(progresses, speeds)));
     }
