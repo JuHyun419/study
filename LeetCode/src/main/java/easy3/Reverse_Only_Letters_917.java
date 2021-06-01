@@ -1,10 +1,9 @@
 package easy3;
 
-// TODO:
 public class Reverse_Only_Letters_917 {
 
-    public static String reverseOnlyLetters(String str) {
-        StringBuilder sb = new StringBuilder();
+    public static String reverseOnlyLetters(final String str) {
+        final StringBuilder sb = new StringBuilder();
 
         /* 1. 문자열 역순으로 문자만 넣기 */
         for (int i = str.length() - 1; i >= 0; i--) {
@@ -19,19 +18,19 @@ public class Reverse_Only_Letters_917 {
                 sb.insert(i, str.charAt(i));
             }
         }
-
         return sb.toString();
     }
 
     private static boolean isCharacter(final char ch) {
-        return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+        return Character.isLetter(ch);
+        // return ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z';
     }
 
-    public static void main(String[] args) {
-        String str = "ab-cd";
+    public static void main(final String[] args) {
+        final String str = "ab-cd";
         System.out.println(reverseOnlyLetters(str));
 
-        String str2 = "a-bC-dEf-ghIj";
+        final String str2 = "a-bC-dEf-ghIj";
         System.out.println(reverseOnlyLetters(str2));
     }
 }
