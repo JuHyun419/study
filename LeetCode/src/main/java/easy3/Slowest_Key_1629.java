@@ -1,6 +1,5 @@
 package easy3;
 
-// TODO:
 public class Slowest_Key_1629 {
 
     public char slowestKey(final int[] releaseTimes, final String keysPressed) {
@@ -21,7 +20,6 @@ public class Slowest_Key_1629 {
                 }
             }
         }
-
         return ch;
     }
 
