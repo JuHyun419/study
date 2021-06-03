@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;import static org.junit.jupiter.api.Assertions.*;
 
 class PlayResultTest {
 
@@ -19,7 +19,7 @@ class PlayResultTest {
         int strikeCount = playResult.countStrike(playerLists, computerLists);
 
         int[] result = {1, 0};
-        assertEquals(strikeCount, result[index]);
+        assertThat(strikeCount).isEqualTo(result[index]);
     }
 
     @DisplayName("볼 테스트")
@@ -30,7 +30,7 @@ class PlayResultTest {
         int ballCount = playResult.countBall(playerLists, computerLists);
 
         int[] result = {2, 0};
-        assertEquals(ballCount, result[index]);
+        assertThat(ballCount).isEqualTo(result[index]);
     }
 
     static Stream<Arguments> generateData() {
