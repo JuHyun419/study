@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardAttachMapper">
+
+	<insert id="insert">
+		insert into tbl_attach (uuid, uploadpath, filename, filetype, bno)
+		values (#{uuid}, #{uploadPath}, #{fileName}, #{fileType}, #{bno} )	
+	</insert>
+	
+	<delete id="delete">
+		delete from tbl_attach where uuid = #{uuid}
+	</delete>
+	
+	<select id="findByBno" resultType="org.zerock.domain.BoardAttachVO">
+	select * from tbl_attach where bno = #{bno}
+	</select>
+	
+</mapper>
+
+
+  
