@@ -36,7 +36,7 @@
 
 ### ⌨️ 실습 예제
   - [`Spring Security CSRF`](https://github.com/JuHyun419/study/tree/master/security-csrf)
-  
     - [`정리 내용`](https://zzang9ha.tistory.com/341)
 
+  - [`Pair Programming(Baseball)`](https://github.com/JuHyun419/study/tree/master/pair-programming-baseball)
 
