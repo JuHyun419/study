@@ -65,7 +65,7 @@ public class 베스트앨범 {
         return map;
     }
 
-    static class Album {
+    static class Album implements Comparable<Album> {
         String genres;
         int plays;
         int sum;
@@ -90,11 +90,22 @@ public class 베스트앨범 {
                     ", index=" + index +
                     '}';
         }
+
+        @Override
+        public int compareTo(Album o) {
+            if (o.sum == this.sum) {
+                if (o.plays == this.plays) {
+                    return Integer.compare(this.index, o.index);
+                }
+                return Integer.compare(o.plays, this.plays);
+            }
+            return Integer.compare(o.sum, this.sum);
+        }
     }
 
     public static void main(String[] args) {
-        String[] genres = {"c", "a", "b", "a", "a", "b", "b", "b", "b", "c", "c", "c", "d"};
-        int[] plays = {1, 500, 9, 600, 501, 800, 500, 300, 2, 2, 1, 2, 100000};
+        String[] genres = {"classic", "pop", "classic", "classic", "pop"};
+        int[] plays = {500, 600, 150, 800, 2500};
 
         int[] result = solution(genres, plays);
         System.out.println(Arrays.toString(result));
