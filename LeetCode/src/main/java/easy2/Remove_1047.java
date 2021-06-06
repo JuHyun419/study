@@ -1,6 +1,5 @@
 package easy2;
 
-//TODO: X(최적화)
 public class Remove_1047 {
 
     public static String removeDuplicates(final String s) {
