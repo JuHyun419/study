@@ -8,6 +8,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/../pair-programming-lotto/pom.xml" />
+        <option value="$PROJECT_DIR$/security-csrf/pom.xml" />
+        <option value="$PROJECT_DIR$/Java-PlayGround-TDD-NextStep/pom.xml" />
       </list>
     </option>
   </component>
