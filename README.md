@@ -38,5 +38,5 @@
   - [`Spring Security CSRF`](https://github.com/JuHyun419/study/tree/master/security-csrf)
     - [`정리 내용`](https://zzang9ha.tistory.com/341)
 
-  - [`Pair Programming(Baseball)`](https://github.com/JuHyun419/study/tree/master/pair-programming-baseball)
+  - [`짝 프로그래밍 - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/pair-programming-baseball)
 
