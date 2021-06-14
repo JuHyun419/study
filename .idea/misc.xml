@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Java-PlayGround-TDD-NextStep/java-baseball-playground" />
     <file type="web" url="file://$PROJECT_DIR$/pair-programming-baseball" />
   </component>
   <component name="MavenProjectsManager">
@@ -10,6 +11,10 @@
         <option value="$PROJECT_DIR$/../pair-programming-lotto/pom.xml" />
         <option value="$PROJECT_DIR$/security-csrf/pom.xml" />
         <option value="$PROJECT_DIR$/Java-PlayGround-TDD-NextStep/pom.xml" />
+        <option value="$PROJECT_DIR$/Algorithm/BaekJoon/pom.xml" />
+        <option value="$PROJECT_DIR$/Algorithm/LeetCode/pom.xml" />
+        <option value="$PROJECT_DIR$/Algorithm/Programmers/pom.xml" />
+        <option value="$PROJECT_DIR$/Algorithm/pom.xml" />
       </list>
     </option>
   </component>
