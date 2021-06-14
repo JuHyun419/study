@@ -45,13 +45,11 @@ public class 프린터 {
     }
 
     private static boolean existMaxNumber(Queue<Printer> queue, int compare) {
-        boolean result = false;
         for (Printer printer : queue) {
             if (printer.priority > compare) {
-                result = true;
-                break;
+                return true;
             }
         }
-        return result;
+        return false;
     }
 }
