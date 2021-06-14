@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CommitMessageTemplateConfig">
+    <option name="manualTemplate" value="[LeetCode] easy num: title&#10;[Programmers] 고득점 kit: (type) title&#10;" />
+  </component>
+</project>
