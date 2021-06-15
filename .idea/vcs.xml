@@ -4,5 +4,6 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Java-PlayGround-NEXTSTEP/java-baseball-playground" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Java-PlayGround-TDD-NextStep/java-baseball-playground" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/asdasd/java-baseball-playground" vcs="Git" />
   </component>
 </project>

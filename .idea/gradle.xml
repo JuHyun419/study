@@ -7,10 +7,19 @@
         <option name="delegatedBuild" value="false" />
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Java-PlayGround-TDD-NextStep/java-baseball-playground" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Java-PlayGround-NEXTSTEP/java-baseball-playground" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/Java-PlayGround-TDD-NextStep/java-baseball-playground" />
+            <option value="$PROJECT_DIR$/Java-PlayGround-NEXTSTEP/java-baseball-playground" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/data-structures" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/data-structures" />
           </set>
         </option>
       </GradleProjectSettings>
