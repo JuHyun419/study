@@ -35,10 +35,12 @@
     - [`정리 내용`](https://zzang9ha.tistory.com/341)
 
   - [`짝 프로그래밍 - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/pair-programming-baseball)
+  - [`자바 플레이그라운드(NEXTSTEP) - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/Java-PlayGround-NEXTSTEP/java-baseball-playground)
 
 <br>
 
 ### 📝 기타
   - [`알고리즘`](https://github.com/JuHyun419/study/tree/master/Algorithm)
+  - [`자료구조`](https://github.com/JuHyun419/study/tree/master/data-structures)
 
 
