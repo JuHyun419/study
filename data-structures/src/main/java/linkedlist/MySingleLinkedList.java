@@ -37,7 +37,7 @@ public class MySingleLinkedList<T> {
         Node<T> temp = new Node<>(item);
         temp.next = before.next; // (1)
         before.next = temp; // (2)
-        size ++; // (3)
+        size++; // (3)
     }
 
 
@@ -52,35 +52,6 @@ public class MySingleLinkedList<T> {
             Node<T> node = getNode(index - 1);
             addAfter(node, item);
         }
-
-    }
-
-
-    /**
-     * remove first item
-     * (1) head가 null이 아니라면, head가 현재 head노드의 다음 노드를 가리키게 만든다.
-     */
-    public T removeFirst() {
-        if (isEmpty()) {
-            return null;
-        }
-        T data = head.data;
-        head = head.next;
-        return data;
-    }
-
-
-    /**
-     * remove node after
-     * (1) before의 다음 노드가 null이 아니라면 before의 next필드가 현재 next노드의 다음 노드를 가리키게 만든다.
-     */
-    public T removeAfter(Node<T> before) {
-        if (isNull(before)) {
-            return null;
-        }
-        T data = before.next.data;
-        before.next = before.next.next;
-        return data;
     }
 
 
@@ -121,6 +92,34 @@ public class MySingleLinkedList<T> {
 
 
     /**
+     * remove first item
+     * (1) head가 null이 아니라면, head가 현재 head노드의 다음 노드를 가리키게 만든다.
+     */
+    public T removeFirst() {
+        if (isEmpty()) {
+            return null;
+        }
+        T data = head.data;
+        head = head.next;
+        return data;
+    }
+
+
+    /**
+     * remove node after
+     * (1) before의 다음 노드가 null이 아니라면 before의 next필드가 현재 next노드의 다음 노드를 가리키게 만든다.
+     */
+    public T removeAfter(Node<T> before) {
+        if (isNull(before)) {
+            return null;
+        }
+        T data = before.next.data;
+        before.next = before.next.next;
+        return data;
+    }
+
+
+    /**
      * get
      *
      * @return
@@ -143,6 +142,7 @@ public class MySingleLinkedList<T> {
 
     /**
      * search
+     *
      * @return index of item if item exists, else return -1
      */
     public int indexOf(T item) {
@@ -154,7 +154,7 @@ public class MySingleLinkedList<T> {
                 return index;
             }
             node = node.next;
-            index ++;
+            index++;
         }
         return -1;
     }
@@ -194,3 +194,4 @@ public class MySingleLinkedList<T> {
         System.out.println("position = " + position);
     }
 }
+
