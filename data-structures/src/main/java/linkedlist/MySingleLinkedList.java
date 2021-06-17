@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class MySingleLinkedList<T> {
 
-    public Node<T> head; // 첫 번째 노드의 주소
-    public int size;
+    private Node<T> head; // 첫 번째 노드의 주소
+    private int size;
 
     public MySingleLinkedList() {
         head = null;
@@ -20,6 +20,8 @@ public class MySingleLinkedList<T> {
      * (3) 사이즈 + 1
      */
     public void addFirst(T item) {
+        Objects.requireNonNull(item);
+
         Node<T> newNode = new Node<>(item);
         newNode.next = head; // (1)
         head = newNode;      // (2)
@@ -46,6 +48,8 @@ public class MySingleLinkedList<T> {
      */
     public void add(int index, T item) {
         checkIndex(index, size);
+        Objects.requireNonNull(item);
+
         if (index == 0) {
             addFirst(item);
         } else {
@@ -60,6 +64,7 @@ public class MySingleLinkedList<T> {
      */
     public T remove(int index) {
         checkIndex(index, size);
+
         if (index == 0) {
             return removeFirst();
         }
@@ -101,6 +106,7 @@ public class MySingleLinkedList<T> {
         }
         T data = head.data;
         head = head.next;
+        size--;
         return data;
     }
 
@@ -115,23 +121,25 @@ public class MySingleLinkedList<T> {
         }
         T data = before.next.data;
         before.next = before.next.next;
+        size--;
         return data;
     }
 
 
     /**
      * get
-     *
-     * @return
+     * @return index에 해당하는 Node의 data
      */
     public T get(int index) {
         checkIndex(index, size);
+
         return getNode(index).data;
     }
 
 
     public Node<T> getNode(int index) {
         checkIndex(index, size);
+
         Node<T> node = head;
         for (int i = 0; i < index; i++) {
             node = node.next;
@@ -147,6 +155,7 @@ public class MySingleLinkedList<T> {
      */
     public int indexOf(T item) {
         Objects.requireNonNull(item);
+
         Node<T> node = head;
         int index = 0;
         while (!isNull(node)) {
@@ -157,6 +166,14 @@ public class MySingleLinkedList<T> {
             index++;
         }
         return -1;
+    }
+
+
+    /**
+     * @return MySingleLinkedList size
+     */
+    public int size() {
+        return this.size;
     }
 
 
