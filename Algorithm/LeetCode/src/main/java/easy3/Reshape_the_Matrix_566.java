@@ -1,6 +1,5 @@
 package easy3;
 
-// TODO: 다른 풀이 확인
 public class Reshape_the_Matrix_566 {
     public static int[][] matrixReshape2(int[][] mat, int r, int c) {
         int[][] reshaped = new int[r][c];
