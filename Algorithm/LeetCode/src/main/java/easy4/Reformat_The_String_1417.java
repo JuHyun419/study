@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-// TODO: 최적화 & 풀이
 public class Reformat_The_String_1417 {
     public static String reformat(String s) {
         StringBuilder sb = new StringBuilder();
