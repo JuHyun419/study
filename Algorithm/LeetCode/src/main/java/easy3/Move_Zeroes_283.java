@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO:
 public class Move_Zeroes_283 {
 
     public static void moveZeroes(int[] nums) {
