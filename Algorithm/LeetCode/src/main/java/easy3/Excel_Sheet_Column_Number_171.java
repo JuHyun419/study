@@ -3,7 +3,6 @@ package easy3;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO: 아스키코드 이용
 public class Excel_Sheet_Column_Number_171 {
     public static int titleToNumber(final String str) {
         final Map<Character, Integer> map = new HashMap<>();
