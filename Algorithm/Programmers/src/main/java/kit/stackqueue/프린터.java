@@ -3,7 +3,6 @@ package kit.stackqueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
-// TODO:
 public class 프린터 {
 
     // 프린터에서 인쇄 요청이 들어온 순서와 중요도를 한 쌍으로 관리
