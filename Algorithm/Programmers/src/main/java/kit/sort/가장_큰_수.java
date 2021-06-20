@@ -2,7 +2,6 @@ package kit.sort;
 
 import java.util.Arrays;
 
-// TODO:
 public class 가장_큰_수 {
     public static String solution(final int[] n) {
         final String[] numbers = Arrays.stream(n).mapToObj(String::valueOf).toArray(String[]::new);
