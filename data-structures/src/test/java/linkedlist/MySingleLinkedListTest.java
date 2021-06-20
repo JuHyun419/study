@@ -151,5 +151,47 @@ class MySingleLinkedListTest {
         assertThat(newNode.data).isEqualTo("A");
     }
 
+    @Test
+    @DisplayName("Node에서 특정 item에 해당하는 index를 반환한다.")
+    void indexOf() {
+        /* given */
+        final String item = "B";
+
+        /* when */
+        final int index = linkedList.indexOf(item);
+
+        /* then */
+        assertThat(index).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("Node에서 존재하지 않는 item의 index를 조회하면 -1을 반환한다.")
+    void indexOf_NotExistItem() {
+        /* given */
+        final String item = "Nothing";
+
+        /* when */
+        final int index = linkedList.indexOf(item);
+
+        /* then */
+        assertThat(index).isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("Node의 size를 리턴한다. ")
+    void size() {
+        /* given */
+        MySingleLinkedList<String> linkedList = new MySingleLinkedList<>();
+        int size = 5;
+
+        /* when */
+        for (int i = 0; i < size; i++) {
+            linkedList.add(i, "Test" + i);
+        }
+
+        /* then */
+        assertThat(linkedList.size()).isEqualTo(size);
+    }
+
 
 }
