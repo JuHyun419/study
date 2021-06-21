@@ -1,5 +1,13 @@
 # 🐜 STUDY 🐝
 
+### 📝 기초
+  - [`알고리즘`](https://github.com/JuHyun419/study/tree/master/Algorithm)
+
+  - [`자료구조`](https://github.com/JuHyun419/study/tree/master/data-structures)
+
+  - [`CS`](https://github.com/JuHyun419/study/tree/master/computer-science)
+
+<br>
 
 ### 📗 도서 목록
   - [`Jpub 객체지향 사고 프로세스`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%EC%82%AC%EA%B3%A0%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4)
@@ -41,13 +49,5 @@
 
   - [`자바 플레이그라운드(NEXTSTEP) - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/Java-PlayGround-NEXTSTEP/java-baseball-playground)
 
-
 <br>
-
-
-### 📝 기타
-  - [`알고리즘`](https://github.com/JuHyun419/study/tree/master/Algorithm)
-
-  - [`자료구조`](https://github.com/JuHyun419/study/tree/master/data-structures)
-
 
