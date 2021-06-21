@@ -1,6 +1,6 @@
 # 🐜 STUDY 🐝
 
-### 기초
+### 📝 기초
   - [`알고리즘`](https://github.com/JuHyun419/study/tree/master/Algorithm)
 
   - [`자료구조`](https://github.com/JuHyun419/study/tree/master/data-structures)
