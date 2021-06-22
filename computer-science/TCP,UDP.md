@@ -64,6 +64,7 @@ https://velog.io/@hidaehyunlee/TCP-%EC%99%80-UDP-%EC%9D%98-%EC%B0%A8%EC%9D%B4
   - UDP: HTTP/3 (최신 버전)
   - 현재는 주로 HTTP/1.1 을 사용
   - [`HTTP/3는 왜 UDP를 선택한 것일까?`](https://evan-moon.github.io/2019/10/08/what-is-http3/)
+  - [`TCP / UDP 포트 목록`](https://ko.wikipedia.org/wiki/TCP/UDP%EC%9D%98_%ED%8F%AC%ED%8A%B8_%EB%AA%A9%EB%A1%9D)
 
 <br><br>
 
