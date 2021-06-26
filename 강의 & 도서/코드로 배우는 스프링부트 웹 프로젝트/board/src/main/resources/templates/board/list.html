@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
+    <th:block th:fragment="content">
+        <h1 class="mt-4">Board List Page
+            <span>
+                <a th:href="@{/board/register}">
+                    <button type="button" class="btn btn-outline-primary">REGISTER</button>
+                </a>
+            </span>
+        </h1>
+
+        <form action="/board/list" method="get" id="searchForm">
+            <div class="input-group">
+                <input type="hidden" name="page" value = "1">
+                <div class="input-group-prepend">
+                    <select class="custom-select" name="type">
+                        <option th:selected="${pageRequestDto.type == null}">-------</option>
+                        <option value="t" th:selected="${pageRequestDto.type == 't'}">제목</option>
+                        <option value="c" th:selected="${pageRequestDto.type == 'c'}">내용</option>
+                        <option value="w" th:selected="${pageRequestDto.type == 'w'}">작성자</option>
+                        <option value="tc" th:selected="${pageRequestDto.type == 'tc'}">제목 + 내용</option>
+                        <option value="tcw" th:selected="${pageRequestDto.type == 'tcw'}">제목 + 내용 + 작성자</option>
+                    </select>
+                </div>
+                <input class="form-control" name="keyword" th:value="${pageRequestDto.keyword}">
+                <div class="input-group-append" it="button-addon4">
+                    <button class="btn btn-outline-secondary btn-search" type="button">Search</button>
+                    <button class="btn btn-outline-secondary btn-clear" type="button">Clear</button>
+                </div>
+            </div>
+        </form>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">번호</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성자</th>
+        <th scope="col">작성일자</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="dto : ${result.dtoList}" >
+        <th scope="row">
+            <a th:href="@{/board/read(bno = ${dto.bno}, page = ${result.page},
+          type = ${pageRequestDto.type}, keyword = ${pageRequestDto.keyword})}" >
+                [[${dto.bno}]]
+            </a>
+        </th>
+        <td>[[${dto.title}]] --------------- [<b th:text="${dto.replyCount}"></b>]</td>
+        <td>[[${dto.writerName}]] <small>[[${dto.writerEmail}]]</small></td>
+        <td>[[${#temporals.format(dto.regDate, 'yyyy/MM/dd')}]]</td>
+    </tr>
+    </tbody>
+</table>
+
+        <ul class="pagination h-100 justify-content-center align-items-center">
+            <li class="page-item" th:if="${result.prev}">
+                <a class="page-link" th:href="@{/board/list(page = 1,
+                type = ${pageRequestDto.type}, keyword = ${pageRequestDto.keyword})}" tabindex="-1"> << </a>
+            </li>
+
+            <li class="page-item" th:if="${result.prev}">
+                <a class="page-link" th:href="@{/board/list(page = ${result.start - 1},
+                type = ${pageRequestDto.type}, keyword = ${pageRequestDto.keyword} )}" tabindex="-1">Previous</a>
+            </li>
+
+            <li th:class="'page-item ' + ${result.page == page ? 'active' : ''}" th:each="page: ${result.pageList}">
+                <a class="page-link" th:href="@{/board/list(page = ${page},
+                type = ${pageRequestDto.type}, keyword = ${pageRequestDto.keyword} )}">
+                    [[${page}]]
+                </a>
+            </li>
+
+            <li class="page-item" th:if="${result.next}">
+                <a class="page-link" th:href="@{/board/list(page = ${result.end + 1},
+        type = ${pageRequestDto.type}, keyword = ${pageRequestDto.keyword} )}">Next</a>
+            </li>
+
+            <li class="page-item" th:if="${result.next}">
+                <a class="page-link" th:href="@{/board/list(page = ${result.totalPage},
+            type = ${pageRequestDto.type}, keyword = ${pageRequestDto.keyword} )}"> >> </a>
+            </li>
+        </ul>
+
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script th:inline="javascript">
+            const msg = [[${msg}]];
+
+            if (msg) {
+                $(".modal").modal();
+            }
+
+            const searchForm = $("#searchForm");
+
+            $('.btn-search').click(function() {
+                searchForm.submit();
+            })
+
+            $('.btn-clear').click(function() {
+                searchForm.empty().submit();
+            })
+        </script>
+
+
+            </th:block>
+</th:block>

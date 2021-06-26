@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <h1>Fragment Test</h1>
+  <div style="border: 1px solid blue">
+      <th:block th:replace="~{/fragments/fragment2}"></th:block>
+  </div>
+
+  <h1>Layout 1 - 1</h1>
+  <div th:replace="~{/fragments/fragment1 :: part1}"></div>
+
+  <h1>Layout 1 - 2</h1>
+  <div th:insert="~{/fragments/fragment1 :: part2}"></div>
+
+  <h1>Layout 1 - 3</h1>
+  <th:block th:replace="~{/fragments/fragment1 :: part3}"></th:block>
+
+</body>
+</html>
