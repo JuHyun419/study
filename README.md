@@ -16,7 +16,7 @@
 
   - [`실전 자바 소프트웨어 개발`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94%20%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%20%EA%B0%9C%EB%B0%9C)
 
-  - [`이펙티브 자바 3/E`](https://github.com/Meet-Coder-Study/book-effective-java)
+  - [`이펙티브 자바 3/E(발표 스터디)`](https://github.com/Meet-Coder-Study/book-effective-java)
 
   - [`Jpub 자바 개발자를 위한 97가지 제안`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC%20%EC%9C%84%ED%95%9C%2097%EA%B0%80%EC%A7%80%20%EC%A0%9C%EC%95%88)
 
