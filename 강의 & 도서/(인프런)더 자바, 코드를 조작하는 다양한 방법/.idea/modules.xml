@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/(인프런)더 자바, 코드를 조작하는 다양한 방법.iml" filepath="$PROJECT_DIR$/.idea/(인프런)더 자바, 코드를 조작하는 다양한 방법.iml" />
+      <module fileurl="file://$PROJECT_DIR$/di-sample/di-sample.iml" filepath="$PROJECT_DIR$/di-sample/di-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample-code/sample-code.iml" filepath="$PROJECT_DIR$/sample-code/sample-code.iml" />
+    </modules>
+  </component>
+</project>

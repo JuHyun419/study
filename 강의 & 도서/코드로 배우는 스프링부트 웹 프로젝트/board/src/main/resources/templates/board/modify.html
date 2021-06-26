@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
+  <th:block th:fragment="content">
+    <h1 class="mt-4">Guestbook Modify Page</h1>
+
+    <form action="/board/modify" method="post">
+      <!-- 페이지 번호 -->
+      <input type="hidden" name="page" th:value="${requestDto.page}">
+      <input type="hidden" name="type" th:value="${requestDto.type}">
+      <input type="hidden" name="keyword" th:value="${requestDto.keyword}">
+
+      <div class="form-group">
+        <label >번호</label>
+        <input type="text" class="form-control" name="bno" th:value="${dto.bno}" readonly>
+      </div>
+
+      <div class="form-group">
+        <label >제목</label>
+        <input type="text" class="form-control" name="title" th:value="${dto.title}">
+      </div>
+
+      <div class="form-group">
+        <label >내용</label>
+        <textarea class="form-control" rows="5" name="content">[[${dto.content}]]</textarea>
+      </div>
+
+      <div class="form-group">
+        <label >작성자</label>
+        <input type="text" class="form-control" name="writer" th:value="${dto.writerName}" readonly>
+      </div>
+
+      <!-- name 넣어서 태스트 => 오류 -->
+      <div class="form-group">
+        <label >작성일자</label>
+        <input type="text" class="form-control" th:value="${#temporals.format(dto.regDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
+      </div>
+
+      <div class="form-group">
+        <label >수정일자</label>
+        <input type="text" class="form-control" th:value="${#temporals.format(dto.modDate, 'yyyy/MM/dd HH:mm:ss')}" readonly>
+      </div>
+    </form>
+
+    <button type="button" class="btn btn-primary modifyBtn">Modify</button>
+
+    <button type="button" class="btn btn-info listBtn">List</button>
+
+    <button type="button" class="btn btn-danger removeBtn">Remove</button>
+
+    <script th:inline="javascript">
+      var actionForm = $("form");
+
+      // Remove
+      $(".removeBtn").click(function() {
+        if (!confirm("삭제하시겠습니까?")) {
+          return;
+        }
+        actionForm
+                .attr("action", "/board/remove")
+                .attr("method", "post");
+        actionForm.submit();
+      });
+
+      // Modify
+      $(".modifyBtn").click(function() {
+        if (!confirm("수정하시겠습니까?")) {
+          return;
+        }
+        actionForm
+                .attr("action", "/board/modify")
+                .attr("method", "post")
+                .submit();
+      });
+
+      // List
+      $(".listBtn").click(function() {
+        //const pageInfo = $("input[name='page']");
+        var page = $("input[name='page']");
+        var type = $("input[name='type']");
+        var keyword = $("input[name='keyword']");
+
+        actionForm.empty();
+        actionForm.append(page);
+        actionForm.append(type);
+        actionForm.append(keyword);
+        actionForm
+                .attr("action", "/board/list")
+                .attr("method", "get");
+
+        //console.log(actionForm.html());
+        actionForm.submit();
+      });
+    </script>
+
+  </th:block>
+</th:block>

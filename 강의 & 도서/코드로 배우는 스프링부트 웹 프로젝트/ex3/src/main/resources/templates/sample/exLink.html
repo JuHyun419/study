@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <!-- 쿼리 파라미터 추가 -->
+  <ul>
+    <li th:each="dto : ${list}">
+      <a th:href="@{/sample/exView(sno=${dto.sno})}">[[${dto}]]</a>
+    </li>
+  </ul>
+
+  <!-- /exLink/3 처럼 값을 path로 이용 -->
+  <ul>
+      <li th:each="dto : ${list}">
+          <a th:href="@{/sample/exView/{sno}(sno = ${dto.sno})}">[[${dto}]]</a>
+      </li>
+  </ul>
+
+  <ul>
+      <li th:each="dto : ${list}">
+          [[${dto.sno}]] --- [[${#temporals.format(dto.regTime, 'yyyy/MM/dd')}]]
+      </li>
+  </ul>
+</body>
+</html>
