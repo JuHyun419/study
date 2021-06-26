@@ -23,6 +23,8 @@
   - [`Jpub 자바 기반의 마이크로서비스 이해와 아키텍처 구축하기`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%9E%90%EB%B0%94%EA%B8%B0%EB%B0%98%EC%9D%98%20%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9D%B4%ED%95%B4%EC%99%80%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0)
 
   - [`코드로 배우는 스프링 웹 프로젝트`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
+
+  - [`코드로 배우는 스프링부트 웹 프로젝트`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20&%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
   
 
 <br>
