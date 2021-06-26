@@ -1,5 +1,5 @@
-# 📝 더 자바, 코드를 조작하는 다양한 방법
-https://www.inflearn.com/course/the-java-code-manipulation/dashboard
+# 📝 [더 자바, 코드를 조작하는 다양한 방법](https://www.inflearn.com/course/the-java-code-manipulation)
+https://www.inflearn.com/course/the-java-code-manipulation
 
   - JVM 구조를 이해할 수 있습니다.
   - 바이트코드 조작은 무엇인지 어떻게 사용할 수 있는지 학습합니다.
