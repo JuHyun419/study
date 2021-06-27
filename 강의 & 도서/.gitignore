@@ -1,3 +1,5 @@
 *.iml
 **/vcs.xml
 **/*.iml
+
+.idea
