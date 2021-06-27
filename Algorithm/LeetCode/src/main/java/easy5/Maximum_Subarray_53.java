@@ -1,6 +1,5 @@
 package easy5;
 
-// TODO:
 public class Maximum_Subarray_53 {
     public int maxSubArray(int[] nums) {
         int sum = nums[0];
