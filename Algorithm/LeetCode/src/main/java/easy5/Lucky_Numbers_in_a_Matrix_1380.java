@@ -3,7 +3,6 @@ package easy5;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO:
 public class Lucky_Numbers_in_a_Matrix_1380 {
     public static List<Integer> luckyNumbers (int[][] matrix) {
         List<Integer> list = new ArrayList<>();
