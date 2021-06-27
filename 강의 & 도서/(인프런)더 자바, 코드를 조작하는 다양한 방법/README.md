@@ -55,6 +55,7 @@ https://www.inflearn.com/course/the-java-code-manipulation
 추가 자료
   - https://catch-me-java.tistory.com/12?category=438116
   - https://yadon079.github.io/2020/java%20study%20halle/week-01
+  - https://asfirstalways.tistory.com/158
 
 ### 클래스 로더
   - 로딩, 링크, 초기화 순으로 진행됨
