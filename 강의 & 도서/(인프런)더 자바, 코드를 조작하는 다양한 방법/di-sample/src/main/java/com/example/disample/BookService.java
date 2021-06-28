@@ -1,12 +1,10 @@
 package com.example.disample;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.example.reflection.Book;
 
-@Service
-public class BookService {
+// 서브젝트
+public interface BookService {
 
-    @Autowired
-    public BookRepository bookRepository;
+    void rent(Book book);
 
 }

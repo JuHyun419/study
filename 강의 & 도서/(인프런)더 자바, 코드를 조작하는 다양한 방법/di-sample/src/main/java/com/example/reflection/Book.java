@@ -2,6 +2,8 @@ package com.example.reflection;
 
 public class Book {
 
+    private String title;
+
     @MyAnnotation
     private String a;
 
@@ -21,6 +23,14 @@ public class Book {
         this.a = a;
         this.d = d;
         this.e = e;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     private void f() {

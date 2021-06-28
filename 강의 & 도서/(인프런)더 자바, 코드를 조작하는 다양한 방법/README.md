@@ -226,7 +226,6 @@ public class Books {
 }
 
 
-
 package com.example.reflection2;
 
 import java.lang.reflect.Constructor;
@@ -300,3 +299,38 @@ C
     - @Entity 클래스에 Setter가 없다면 리플렉션을 사용한다.
   - JUnit
     - https://junit.org/junit5/docs/5.0.3/api/org/junit/platform/commons/util/ReflectionUtils.html
+
+
+<br>
+
+## 프록시(Proxy)
+#### 스프링 데이터 JPA는 어떻게 동작하나?
+  - 인터페이스 타입의 인스턴스는 누가 만들어 주는것인가?
+    - Spring AOP를 기반으로 동작하며 RepositoryFactorySupport 추상클래스에서 프록시를 생성
+
+![image](https://user-images.githubusercontent.com/50076031/123599645-cc25ef00-d830-11eb-812f-065c88fdf03a.png)
+
+#### 프록시 패턴
+
+![image](https://user-images.githubusercontent.com/50076031/123599987-2e7eef80-d831-11eb-8929-4246e116d47a.png)
+
+  - 프록시를 직역하면? 대리인
+  - 프록시와 리얼 서브젝트가 공유하는 인터페이스(서브젝트)가 존재하고, 클라이언트는 해당 인터페이스(서브젝트) 타입으로 프록시를 사용
+  - 클라이언트는 프록시(대리인)을 거쳐 리얼 서브젝트로 사용하기 때문에 프록시는 리얼 서브젝트에 대한 접근 관리, 부가기능 제공 및 리턴값을 변경할 수 있음
+  - 리얼 서브젝트는 자신이 해야 할 일만 하면서(SRP 단일 책임 원칙) 프록시를 사용해서 부가적인 기능(접근 제한, 로깅, 트랜잭션 등)을 제공할 때 위와 같은 패턴을 주로 사용함
+
+#### 다이나믹 프록시(Dynamic Proxy)
+https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html
+  - 런타임에 특정 인터페이스들을 구현하는 클래스 또는 인스턴스를 만드는 기술
+  - 프록시 스프링 AOP에 대한 더 자세한 내용은 토비의 스프링 3.1 6장 AOP 참고
+  - 인터페이스 타입만 적용이 가능
+
+#### 클래스 타입의 프록시가 필요하다면?
+  - [CGlib](https://github.com/cglib/cglib/wiki) 의 MethodInterceptor 참고
+  - CGlib: 스프링, 하이버네티으가 사용하는 라이브러리
+
+### 다이나믹 프록시(Dynamic Proxy) 정리
+  - 런타임에 인터페이스 또는 클래스의 프록시 인스턴스 및 클래스를 만들어 사용하는 프로그래밍 기법
+  - Spring Data JPA, AOP, Mockito, Hibernate lazy initialization 등에서 사용
+
+http://tutorials.jenkov.com/java-reflection/dynamic-proxies.html
