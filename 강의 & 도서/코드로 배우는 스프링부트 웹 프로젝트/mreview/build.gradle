@@ -33,6 +33,9 @@ dependencies {
     implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.0'
 
     implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+
+    // thumbnail dependency
+    implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.12'
 }
 
 test {
