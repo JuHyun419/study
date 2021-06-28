@@ -32,4 +32,20 @@
     - FATCH 속성값은 attributePaths에 명시한 속성은 EAGER로 처리하고, 나머지는 LAZY로 처리
     - LOAD 속성값은 attributePaths에 명시한 속성은 EAGER로 처리하고, 나머지는 엔티티 클래스에 명시되거나 기본 방식으로 처리
     
+## 파일 업로드 처리
+  - 서블릿 기반으로 처리
+  - application.properties 파일에 multipart 관련 추가(파일 처리)
 
+#### 파일 저장 단계에서는 다음 사항들을 고려해야 함
+  - 업로드된 확장자가 이미지만 가능하도록 검사
+    - MultipartFile에서 제공하는 getContentType()을 이용해서 처리
+  - 동일한 이름의 파일이 업로드 된다면 기존 파일을 덮어쓰는 문제
+    - 시간 추가 or UUID 이용
+  - 업로드된 파일을 저장하는 폴더의 용량
+    - 년/월/일 폴더를 따로 생성해서 파일 저장
+    
+
+#### 썸네일(Thumbnail) 처리
+  - 업로드된 파일을 저장하고 썸네일 라이브러리(net.coobird Thumbnailator) 를 활용해서 썸네일 파일 생성
+  - 썸네일 파일은 맨 앞 's_'를 붙여서 일반 파일과 구분
+  - Dto에 썸네일의 Url을 받아오는 메소드 추가 --> <img> 태그로 처리
