@@ -6,7 +6,7 @@ http://www.yes24.com/Product/Goods/96051853
 
 ## :blue_book: 목차
 
-### Part1 스프링 부트 도전하기
+### [Part1 스프링 부트 도전하기](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20&%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/ex2)
   - 프로젝트를 위한 준비
     - 개발 도구의 준비
     - Springinitializr를 이용한 프로젝트 생성
