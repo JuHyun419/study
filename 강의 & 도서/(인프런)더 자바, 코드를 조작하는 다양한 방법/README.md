@@ -334,3 +334,34 @@ https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html
   - Spring Data JPA, AOP, Mockito, Hibernate lazy initialization 등에서 사용
 
 http://tutorials.jenkov.com/java-reflection/dynamic-proxies.html
+
+
+<br><br>
+
+## 애노테이션 프로세서
+### Lombok(롬복)은 어떻게 동작하는 걸까?
+  - 컴파일 시점에 [애노테이션 프로세서](https://docs.oracle.com/javase/8/docs/api/javax/annotation/processing/Processor.html) 를 사용하여 
+    소스코드의 [AST(Abstract Syntax Tree)](https://javaparser.org/inspecting-an-ast/) 를 조작
+  - 논란거리 ?
+    - 공개된 API가 아닌 컴파일러 내부 클래스를 사용하여 기존 소스 코드를 조작
+    - 그치만 엄청난 편리함, 간결함 때문에 널리 쓰임
+### 애노테이션 프로세서 사용 예
+  - Lombok(롬복)
+  - AutoService: java.util.ServiceLoader 용 파일 생성 유틸리티
+  - @Override
+    
+AutoValue
+https://github.com/google/auto/blob/master/value/userguide/index.md    
+
+Immutables
+https://immutables.github.io/
+
+
+<br><br>
+
+## 학습한 내용
+  - JVM 구조
+  - 바이트 코드 조작 - ASM or Javassist, ByteBuddy
+  - 리플렉션 API - 클래스 정보 참조(생성자, 메소드, 필드, private 등)
+  - 다이나믹 프록시 - Proxy, CGlib, ByteBuddy
+  - 애노테이션 프로세서
