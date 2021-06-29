@@ -78,6 +78,5 @@
 
 ### References
   - https://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-22%ED%8E%B8-TCP-3-WayHandshake-4-WayHandshake
-  - https://velog.io/@ss-won/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-TCP-3-way-handshake
   - https://afteracademy.com/blog/what-is-a-tcp-3-way-handshake-process
   - https://gmlwjd9405.github.io/2018/09/19/tcp-connection.html
