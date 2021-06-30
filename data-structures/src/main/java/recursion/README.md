@@ -21,4 +21,15 @@
   - 그 역도 성립. 즉, **모든 반복문은 Recursion 으로 표현 가능**
   - 순환함수는 복잡한 알고리즘을 단순하고 알기쉽게 표현하는 것을 가능하게 함
 
+
+### 미로찾기
+Recursive Thinking
+  - 현재 위치에서 출구까지 가는 경로가 있으려면
+    - 현재 위치가 출구이거나 혹은
+    - 이웃한 셀들 중 하나에서 현재 위치를 지나지 않고 출구까지 가는 경로가 있거나
+![image](https://user-images.githubusercontent.com/50076031/123961104-f9b69800-d9ea-11eb-90cf-b53413901564.png)
+
+
+
+
 https://www.youtube.com/channel/UC-cOmaeWLm7Ii7erMQNatvA
