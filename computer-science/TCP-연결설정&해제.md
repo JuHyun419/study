@@ -49,6 +49,11 @@
 ### 각 용어 설명
 
 ```html
+* TIME_WAIT: Server에서 FIN을 전송하기 전에 전송했던 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해 
+FIN 패킷보다 늦게 도착하는 데이터 유실을 막기 위해 Client는 Server로부터 FIN을 수신하더라도 일정시간(디폴트 240초) 
+동안 세션을 남겨놓고 잉여 패킷을 기다리는 과정(즉, 데이터의 유실 방지)
+
+
 // TCP Header 안 플래그 정보
 * SYN(Synchronization): 상대에 대한 접속 요청
 
