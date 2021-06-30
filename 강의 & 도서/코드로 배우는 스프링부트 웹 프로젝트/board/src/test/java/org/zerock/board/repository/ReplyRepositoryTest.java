@@ -4,14 +4,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import org.zerock.board.entity.Board;
 import org.zerock.board.entity.Reply;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ReplyRepositoryTest {
@@ -36,6 +35,7 @@ class ReplyRepositoryTest {
     }
 
     @Test
+    @Transactional
     @DisplayName("")
     void readReply1() {
         /* given */
