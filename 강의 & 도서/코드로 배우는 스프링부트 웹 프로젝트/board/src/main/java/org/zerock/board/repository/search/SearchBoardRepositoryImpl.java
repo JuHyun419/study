@@ -29,7 +29,6 @@ public class SearchBoardRepositoryImpl extends QuerydslRepositorySupport impleme
      */
     public SearchBoardRepositoryImpl() {
         super(Board.class);
-
     }
 
     @Override
@@ -70,7 +69,7 @@ public class SearchBoardRepositoryImpl extends QuerydslRepositorySupport impleme
                 .leftJoin(reply).on(reply.board.eq(board))
                 .groupBy(board);
 
-        log.info("jpqlQuery: " + jpqlQuery);
+        log.info("jpqlQuery: \n" + jpqlQuery);
 
         return null;
     }
