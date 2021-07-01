@@ -88,7 +88,6 @@ public class Board extends BaseEntity {
     @Column
     private String content;
 
-    // 영속성 전이(Cascade)
     @ManyToOne
     private Member member;
 
@@ -215,3 +214,210 @@ System.out.println(reply.getBoard());
 
 #### '지연 로딩을 기본으로 사용하고, 상황에 맞게 필요한 방법을 찾자'
 
+<br>
+
+### 연관관계에서는 @ToString() 주의(무한 순환 참조)
+  - Board 엔티티의 @ToString()을 하면 Member 엔티티 역시 출력(호출)
+  - Member을 출력하기 위해서는 Member 엔티티의 toString()이 호출되어야 하고, 데이터베이스 연결이 필요
+  - Member을 출력할 때 (연관관계 설정이 되어있다면) 다시 Board 엔티티 호출 ... 반복(무한 참조) -> Overflow
+  - 따라서 exclude 속성을 사용할 것
+
+```java
+
+@Entity
+@Getter
+@ToString(exclude = "member") // exclude 추가
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Board extends BaseEntity {
+    ...
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private Member member;
+
+}
+
+
+@Entity
+@Getter
+@ToString(exclude = "boards")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Member extends BaseEntity {
+    ...
+    @OneToMany
+    List<Board> boards = new ArrayList<>();
+}
+
+```
+
+<br>
+
+### 게시물 삭제 처리
+  - 게시물 삭제 -> FK로 게시물을 참조하고 있는 댓글(Reply) 테이블 역시 삭제해야 함
+  - 해당 게시물의 모든 댓글 삭제 -> 해당 게시물 삭제
+    - 두 작업이 하나의 '트랜잭션' 으로 처리되어야 함
+    
+
+```java
+
+// ReplyRepository Board 삭제 시 Reply 삭제
+@Modifying // JPQL에서 update, delete 실행하기 위해 필요한 어노테이션
+@Query("delete from Reply r where r.board.bno = :bno")
+    void deleteByBno(@Param("bno") Long bno);
+
+@Transactional
+public void deleteWithReplies(Long bno) {
+    // 1) 해당 게시물의 FK로 참조하고 있는 모든 댓글 삭제
+    replyRepository.deleteByBno(bno);
+
+    // 2) 해당 게시물 삭제
+    boardRepository.deleteById(bno);
+}
+```
+
+<br>
+
+### JPQL 검색(Querydsl)
+  - FK를 이용해서 @ManyToOne과 같은 연관관계에서 어려운 작업은 검색에 필요한 JPQL 구현
+  - 여러 엔티티 타입을 JPQL로 직접 처리하는 경우, Object[] 타입으로 리턴(Tuple)
+
+#### Repository 확장
+  - Spring Data JPA의 Repository를 확장하기 위해서는 다음과 같은 단계로 처리
+    - 쿼리 메서드나 @Query 어노테이션 등으로 처리할 수 없는 기능은 별도 인터페이스 설계
+    - 별도 인터페이스에 대한 클래스 작성 -> QuerydslRepositorySupport 라는 클래스를 부모 클래스로 사용
+    - 구현 클래스에 인터페이스의 기능을 Q도메인 클래스와 JPQLQuery를 이용해서 구현
+    
+```java
+public class SearchBoardRepository extends QuerydslRepositorySupport {
+
+    /**
+     * Creates a new {@link QuerydslRepositorySupport} instance for the given domain type.
+     */
+    public SearchBoardRepository() {
+        super(Board.class);
+    }
+    ...
+            
+            
+-------------------------------------------------------------------------------------
+    public Board search1() {
+        QBoard qBoard = QBoard.board;
+
+        JPQLQuery<Board> jpqlQuery = from(qBoard);
+        jpqlQuery.select(qBoard)
+                .where(qBoard.bno.eq(1L));
+
+        log.info("jpqlQuery: \n" + jpqlQuery);
+
+        QBoard board = QBoard.board;
+        QReply reply = QReply.reply;
+
+        JPQLQuery<Board> jpqlQuery1 = from(board);
+        jpqlQuery1.leftJoin(reply).on(reply.board.eq(board));
+
+        log.info("jpqlQuery1: \n" + jpqlQuery1);
+
+        return null;
+    }
+    
+    2021-07-01 15:28:11.379  INFO 85302 --- [           main] o.z.b.r.s.SearchBoardRepositoryImpl      : jpqlQuery:
+    select board
+    from Board board
+    where board.bno = ?1 
+    2021-07-01 15:28:11.381  INFO 85302 --- [           main] o.z.b.r.s.SearchBoardRepositoryImpl      : jpqlQuery1:
+    select board
+    from Board board
+    left join Reply reply with reply.board = board
+
+------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------
+    public Board search2() {
+        QBoard board = QBoard.board;
+        QReply reply = QReply.reply;
+        QMember member = QMember.member;
+
+        JPQLQuery<Board> jpqlQuery = from(board);
+
+        jpqlQuery.select(board, member.email, reply.count())
+                .leftJoin(member).on(board.member.eq(member))
+                .leftJoin(reply).on(reply.board.eq(board))
+                .groupBy(board);
+
+        log.info("jpqlQuery: " + jpqlQuery);
+
+        return null;
+    }
+
+    
+    2021-07-01 15:30:59.460  INFO 85359 --- [           main] o.z.b.r.s.SearchBoardRepositoryImpl      : jpqlQuery: 
+    select board, member1.email, count(reply)
+    from Board board
+    left join Member member1 with board.member = member1
+    left join Reply reply with reply.board = board
+    group by board
+------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------
+    public Board search3() {
+        QBoard board = QBoard.board;
+        QMember member = QMember.member;
+        QReply reply = QReply.reply;
+
+        JPQLQuery<Board> jpqlQuery = from(board);
+        jpqlQuery.leftJoin(member).on(board.member.eq(member))
+                .leftJoin(reply).on(reply.board.eq(board));
+
+        JPQLQuery<Tuple> tuple = jpqlQuery.select(board, member.email, reply.count())
+                .groupBy(board);
+        log.info("tuple: " + tuple);
+
+        List<Tuple> result = tuple.fetch();
+        log.info("result: " + result);
+
+        return null;
+    }
+    
+    2021-07-01 15:33:32.369  INFO 85416 --- [           main] o.z.b.r.s.SearchBoardRepositoryImpl      : tuple: select board, member1.email, count(reply)
+    from Board board
+    left join Member member1 with board.member = member1
+    left join Reply reply with reply.board = board
+    group by board
+    Hibernate:
+    select
+    board0_.bno as col_0_0_,
+    member1_.email as col_1_0_,
+    count(reply2_.rno) as col_2_0_,
+    board0_.bno as bno1_0_,
+    board0_.moddate as moddate2_0_,
+    board0_.regdate as regdate3_0_,
+    board0_.content as content4_0_,
+    board0_.member_email as member_e6_0_,
+    board0_.title as title5_0_
+            from
+    board board0_
+    left outer join
+    member member1_
+    on (
+            board0_.member_email=member1_.email
+    )
+    left outer join
+    reply reply2_
+    on (
+            reply2_.board_bno=board0_.bno
+    )
+    group by
+    board0_.bno
+    
+result: [[Board(bno=4, title=Title...4, content=Content...4), user4@aaa.com, 4], 
+         [Board(bno=5, title=Update Title...., content=Update Content..), user5@aaa.com, 3], ...]
+------------------------------------------------------------------------------------
+```
+
+<br>
+
+### @RestController와 JSON 처리
