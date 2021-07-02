@@ -1,6 +1,5 @@
 package easy4;
 
-// TODO
 public class Distance_Between_Bus_Stops_1184 {
     public static int distanceBetweenBusStops(int[] distance, int start, int destination) {
         int sum1 = 0;
