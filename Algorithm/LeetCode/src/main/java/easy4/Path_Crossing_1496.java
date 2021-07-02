@@ -3,7 +3,6 @@ package easy4;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO:
 public class Path_Crossing_1496 {
     public static boolean isPathCrossing(String path) {
         int x = 0;
