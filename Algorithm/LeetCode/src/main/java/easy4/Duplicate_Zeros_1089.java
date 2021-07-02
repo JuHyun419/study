@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-// TODO:
 public class Duplicate_Zeros_1089 {
     public void duplicateZeros(int[] arr) {
         if (isNotContainsZero(arr)) {
@@ -42,7 +41,6 @@ public class Duplicate_Zeros_1089 {
         return list.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    // TODO: 풀이 확인(index를 이용한 풀이)
     public void duplicateZeros2(int[] arr) {
         int[] newArr = new int[arr.length];
         int p2 = 0;
@@ -55,6 +53,20 @@ public class Duplicate_Zeros_1089 {
             p2++;
         }
         System.arraycopy(newArr, 0, arr, 0, arr.length);
+    }
+
+    public void duplicateZeros3(int[] arr) {
+        int[] temp = new int[arr.length]; // default: 0
+        int index = 0;
+
+        for (int i = 0; i < arr.length && index < temp.length; i++) {
+            if (arr[i] == 0) {
+                index += 2;
+            } else {
+                temp[index++] = arr[i];
+            }
+        }
+        System.arraycopy(temp, 0, arr, 0, arr.length);
     }
 
     public static void main(String[] args) {
