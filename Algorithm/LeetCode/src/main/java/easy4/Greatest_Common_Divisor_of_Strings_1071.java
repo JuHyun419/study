@@ -1,6 +1,5 @@
 package easy4;
 
-// TODO: 코드 확인
 public class Greatest_Common_Divisor_of_Strings_1071 {
 
     public String gcdOfStrings3(String a, String b) {
