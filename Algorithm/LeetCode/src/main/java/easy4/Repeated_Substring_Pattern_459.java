@@ -1,6 +1,5 @@
 package easy4;
 
-// TODO:
 public class Repeated_Substring_Pattern_459 {
     public static boolean repeatedSubstringPattern(String s) {
         StringBuilder sb = new StringBuilder(s);
