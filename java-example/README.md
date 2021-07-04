@@ -2,6 +2,4 @@
 
 ### Stream API
 
-### Optional
-
 
