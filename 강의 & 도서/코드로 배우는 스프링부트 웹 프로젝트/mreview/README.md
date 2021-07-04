@@ -38,6 +38,19 @@
   - 서블릿 기반으로 처리
   - application.properties 파일에 multipart 관련 추가(파일 처리)
 
+```java
+...
+        
+# 파일 업로드
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.location=/Users/juhyun/Desktop/study/files
+spring.servlet.multipart.max-request-size=30MB
+spring.servlet.multipart.max-file-size=10MB
+        
+# 파일 업로드 경로
+org.zerock.upload.path=/Users/juhyun/Desktop/study/files
+```
+
 #### 파일 저장 단계에서는 다음 사항들을 고려해야 함
   - 업로드된 확장자가 이미지만 가능하도록 검사
     - MultipartFile에서 제공하는 getContentType()을 이용해서 처리
