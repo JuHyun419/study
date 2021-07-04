@@ -1,6 +1,5 @@
 package easy5;
 
-// TODO: 풀이 확인
 public class Rotate_String_796 {
     public static boolean rotateString(String s, String goal) {
         if (s.length() == 0 && goal.length() == 0) return true;
