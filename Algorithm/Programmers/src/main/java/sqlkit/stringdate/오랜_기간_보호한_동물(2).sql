@@ -1,4 +1,3 @@
--- TODO:
 -- 코드를 입력하세요
 -- solve 1
 SELECT ins.ANIMAL_ID, ins.NAME
