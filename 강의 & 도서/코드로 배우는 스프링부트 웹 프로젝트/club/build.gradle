@@ -31,6 +31,13 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
+    // https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+    implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.0'
+
+    implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5'
+
+    implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
 }
 
 test {
