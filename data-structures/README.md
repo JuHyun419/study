@@ -58,7 +58,7 @@ https://towardsdatascience.com/8-useful-tree-data-structures-worth-knowing-8532c
 - 트리는 노드(node)들과 노드들을 연결하는 링크(link)들로 구성됨
 - 맨위의 노드를 "루트(Root)" 라고 부름
 - 노드들을 연결하는 선을 "link", "edge", "branch" 등으로 부름
-- 루트노드를 제외한 트리의 모든 노드들을 유일한 부모 노드를 가짐
+- 루트노드를 제외한 트리의 모든 노드들은 유일한 부모 노드를 가짐
 - 부모가 동일한 노드 -> 형제(sibling) 관계라고 부름
 - 리프(leaf) 노드: 자식이 없는 노드
 - 트리의 높이(height) => 5
@@ -102,7 +102,7 @@ https://en.wikipedia.org/wiki/Binary_tree
 
 ![image](https://user-images.githubusercontent.com/50076031/124694706-c5783580-df1c-11eb-86ce-ca6d14e7b03e.png)
 
-- 이진검색틜에서 13을 검색
+- 이진검색트리에서 13을 검색
 - 15보다 작기 때문에 왼쪽 노드
 - 6보다 크기 때문에 오른쪽 노드
 - 7보다 크기 때문에 오른쪽 노드
