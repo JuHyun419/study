@@ -1,4 +1,4 @@
-package org.zerock.club.service;
+package org.zerock.club.security.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.zerock.club.entity.ClubMember;
 import org.zerock.club.entity.ClubMemberRole;
 import org.zerock.club.repository.ClubMemberRepository;
-import org.zerock.club.security.ClubAuthMemberDto;
+import org.zerock.club.security.dto.ClubAuthMemberDto;
 
 import java.util.Collection;
 import java.util.Set;
