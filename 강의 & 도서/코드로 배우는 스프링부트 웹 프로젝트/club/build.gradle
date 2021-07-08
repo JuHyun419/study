@@ -38,6 +38,8 @@ dependencies {
     implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5'
 
     implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 test {
