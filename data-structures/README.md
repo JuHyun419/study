@@ -84,11 +84,18 @@ https://en.wikipedia.org/wiki/Binary_tree
 
 #### 이진 트리의 순회(traversal)
 - 순회: 이진 트리의 모든 노드를 방문하는 일
-- 중순위(inorder) 순회
-- 선순위(preorder) 순회
-- 후순위(postorder) 순회
-- 레벨오더(level-order) 순회
+- 전위 순위(preorder) 순회
+  - 루트 노드를 먼저 순회한 후 '왼쪽 하위 -> 오른쪽 하위' 순으로 순회
+- 중위 순위(inorder) 순회
+  - 왼쪽 최 하위 노드를 먼저 순회한 후 '상위 노드 -> 오른쪽 하위' 순으로 순회
+- 후위 순위(postorder) 순회
+  - 왼쪽 최 하위 노드를 먼저 순회한 후 '오른쪽 하위 노드 -> 상위 노드' 순으로 순회
 
+![image](https://user-images.githubusercontent.com/50076031/124915301-5853c580-e02c-11eb-8942-465ddb0e6fd6.png)
+
+- 전위 순회: 1 -> 2 -> 4 -> 5 -> 3 -> 6 -> 7
+- 중위 순회: 4 -> 2 -> 5 -> 1 -> 6 -> 3 -> 7
+- 후위 순회: 4 -> 5 -> 2 -> 6 -> 7 -> 3 -> 1
 
 ### 이진검색트리(BST, Binary Search Tree)
 - 이진 트리
@@ -125,6 +132,6 @@ TREE-SEARCH(x, k)
 
 
 
-
-
-https://www.youtube.com/channel/UC-cOmaeWLm7Ii7erMQNatvA
+### References
+- https://readerr.tistory.com/35  
+- https://www.youtube.com/channel/UC-cOmaeWLm7Ii7erMQNatvA
