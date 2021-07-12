@@ -32,9 +32,8 @@ public class RecursiveExample {
     public static int length(String str) {
         if (str.equals("")) { // Base case
             return 0;
-        } else { // Recursive case
-            return 1 + length(str.substring(1));
         }
+        return 1 + length(str.substring(1)); // Recursive case
     }
 
 
@@ -42,10 +41,9 @@ public class RecursiveExample {
     public static void printChars(String str) {
         if (str.length() == 0) { // Base case
             return;
-        } else { // Recursive case
-            System.out.println(str.charAt(0));
-            printChars(str.substring(1));
         }
+        System.out.println(str.charAt(0));
+        printChars(str.substring(1));
     }
 
 
@@ -53,10 +51,9 @@ public class RecursiveExample {
     public static void printCharsReverse(String str) {
         if (str.length() == 0) {
             return;
-        } else {
-            printCharsReverse(str.substring(1));
-            System.out.println(str.charAt(0));
         }
+        printCharsReverse(str.substring(1));
+        System.out.println(str.charAt(0));
     }
 
 
@@ -75,9 +72,8 @@ public class RecursiveExample {
     public static int sum(int n, int[] data) {
         if (n <= 0) {
             return 0;
-        } else {
-            return sum(n - 1, data) + data[n - 1];
         }
+        return sum(n - 1, data) + data[n - 1];
     }
 
 
