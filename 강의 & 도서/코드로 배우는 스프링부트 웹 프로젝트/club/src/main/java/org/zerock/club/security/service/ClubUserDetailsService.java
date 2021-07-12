@@ -31,7 +31,6 @@ public class ClubUserDetailsService implements UserDetailsService {
 
         ClubMember clubMember = clubMemberRepository.findByEmail(username, false)
                 .orElseThrow(() -> new UsernameNotFoundException("Check Email or Social"));
-
         log.info("clubMember: " + clubMember);
 
         ClubAuthMemberDto clubAuthMemberDto = new ClubAuthMemberDto(
@@ -39,12 +38,9 @@ public class ClubUserDetailsService implements UserDetailsService {
                 clubMember.getPassword(),
                 clubMember.isFromSocial(),
                 getAuthority(clubMember.getRoleSet())
-                //clubMember.getRoleSet().stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role.name())).collect(Collectors.toList())
         );
-
         clubAuthMemberDto.setName(clubMember.getName());
         clubAuthMemberDto.setFromSocial(clubMember.isFromSocial());
-
         return clubAuthMemberDto;
     }
 
