@@ -140,8 +140,29 @@ public class RecursiveExample {
     }
 
 
+    /* 1 ~ N 출력 => 1 ~ N-1 출력하고, N을 출력한다 */
+    public static void print(int n) {
+        if (n == 0) return;
+
+        print(n - 1);
+        System.out.print(n + " ");
+    }
+
+
+    /* N ~ 1 출력 => N을 출력하고, N-1 ~ 1을 출력한다 */
+    public static void printReverse(int n) {
+        if (n == 0) return;
+
+        System.out.print(n + " ");
+        printReverse(n - 1);
+    }
+
+
     public static void main(String[] args) {
         int n = 15;
         printBinary(15);
+        print(n);
+        System.out.println();
+        printReverse(n);
     }
 }

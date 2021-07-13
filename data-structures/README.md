@@ -6,6 +6,13 @@
     - 간단히 결과를 반환하는 부분
   - Recursive case
     - 자기 자신을 호출하는 부분
+  - 특정 입력에 대해서는 자기 자신을 호출하지 않고 종료되어야 함(Base condition)
+  - 모든 입력은 base condition으로 수렴해야 함
+
+### 재귀에 대한 정보
+- 함수의 인자로 어떤 것을 받고 어디까지 계산한 후 자기 자신에게 넘겨줄지 명확하게 정해야 함
+- 모든 재귀 함수는 반복문만으로 동일한 동작을 하는 함수를 만들 수 있음
+- 재귀는 반복문으로 구현했을 때에 비해 코드가 간결해지지만, 메모리 & 시간 에서는 손해를 봄
 
 ### 문자열의 길이 계산
 ![image](https://user-images.githubusercontent.com/50076031/123888109-bd088380-d98d-11eb-8345-ce1b7461b0f6.png)
@@ -135,3 +142,4 @@ TREE-SEARCH(x, k)
 ### References
 - https://readerr.tistory.com/35  
 - https://www.youtube.com/channel/UC-cOmaeWLm7Ii7erMQNatvA
+- https://www.youtube.com/watch?v=8vDDJm5EewM
