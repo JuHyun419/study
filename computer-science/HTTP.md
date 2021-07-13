@@ -1,4 +1,5 @@
 # 📝 HTTP(HyperText Transfer Protocol)
+[`HTTP(2)`](https://github.com/JuHyun419/study/blob/master/computer-science/HTTP(2).md)
 
 ## 목차
 - [HTTP 정의](#HTTP-정의)
@@ -172,6 +173,7 @@ RFC(Request For Comments)
   - [TCP/IP 3-way Handshake](https://github.com/JuHyun419/study/blob/master/computer-science/TCP-%EC%97%B0%EA%B2%B0%EC%84%A4%EC%A0%95%26%ED%95%B4%EC%A0%9C.md) 시간 추가
   - 웹 브라우저로 사이트를 요청하면 HTML, CSS, JS, 이미지 등 수많은 자원이 함께 다운로드 되어 비효율
   - 지금은 **HTTP 지속 연결(Persistent Connections)** 로 문제 해결
+    - [`Keep Alive 기능`](https://goodgid.github.io/HTTP-Keep-Alive/)
   - HTTP/2, HTTP/3에서 더 많은 최적화
   
 HTTP 초기 - 연결 & 종료 낭비
