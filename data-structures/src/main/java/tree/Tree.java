@@ -29,12 +29,28 @@ public class Tree {
 
     /*
     - 전위 순위(preorder) 순회
-  - 루트 노드를 먼저 순회한 후 '왼쪽 하위 -> 오른쪽 하위' 순으로 순회
-- 중위 순위(inorder) 순회
-  - 왼쪽 최 하위 노드를 먼저 순회한 후 '상위 노드 -> 오른쪽 하위' 순으로 순회
-- 후위 순위(postorder) 순회
-  - 왼쪽 최 하위 노드를 먼저 순회한 후 '오른쪽 하위 노드 -> 상위 노드' 순으로 순회
+        - 루트 노드를 먼저 순회한 후 '왼쪽 하위 -> 오른쪽 하위' 순으로 순회
+    - 중위 순위(inorder) 순회
+        - 왼쪽 최 하위 노드를 먼저 순회한 후 '상위 노드 -> 오른쪽 하위' 순으로 순회
+    - 후위 순위(postorder) 순회
+        - 왼쪽 최 하위 노드를 먼저 순회한 후 '오른쪽 하위 노드 -> 상위 노드' 순으로 순회
      */
+
+
+    /**
+     * 전위 순회
+     *  - 루트 노드를 먼저 순회한 후 '왼쪽 하위 -> 오른쪽 하위' 순으로 순회
+     * @param node
+     */
+    public void preorder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.data + " ");
+        preorder(node.left);
+        preorder(node.right);
+    }
+
 
     /**
      * 중위 순회
@@ -50,19 +66,6 @@ public class Tree {
         inorder(node.right);
     }
 
-    /**
-     * 전위 순회
-     *  - 루트 노드를 먼저 순회한 후 '왼쪽 하위 -> 오른쪽 하위' 순으로 순회
-     * @param node
-     */
-    public void preorder(Node node) {
-        if (node == null) {
-            return;
-        }
-        System.out.print(node.data + " ");
-        preorder(node.left);
-        preorder(node.right);
-    }
 
     /**
      * 후위 순회
