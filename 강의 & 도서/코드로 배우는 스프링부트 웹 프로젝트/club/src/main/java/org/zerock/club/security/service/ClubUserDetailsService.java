@@ -33,6 +33,8 @@ public class ClubUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Check Email or Social"));
         log.info("clubMember: " + clubMember);
 
+        // UserDetails의 구현체인 User를 구현한 Dto
+        // ClubAuthMemberDto ---> User ---> UserDetails
         ClubAuthMemberDto clubAuthMemberDto = new ClubAuthMemberDto(
                 clubMember.getEmail(),
                 clubMember.getPassword(),
