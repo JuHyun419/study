@@ -2,6 +2,7 @@ package d2;
 
 import java.util.Scanner;
 
+// https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Pq-OKAVYDFAUq
 public class 숫자_배열_회전_1961 {
     static Scanner scan = new Scanner(System.in);
     
