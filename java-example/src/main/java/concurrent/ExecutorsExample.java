@@ -52,12 +52,6 @@ public class ExecutorsExample {
         scheduledExecutorService.schedule(getRunnable("Scheduled"), 3, TimeUnit.SECONDS);
         // 1초 기다린 후 2초에 한 번씩 출력
         scheduledExecutorService.scheduleAtFixedRate(getRunnable("Scheduled"), 1, 2, TimeUnit.SECONDS);
-
-
-
-
-
-
     }
 
     private static Runnable getRunnable(String message) {
