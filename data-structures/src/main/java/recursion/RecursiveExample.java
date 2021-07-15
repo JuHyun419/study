@@ -68,6 +68,21 @@ public class RecursiveExample {
     }
 
 
+    /* 10진수를 2진수로 문자열로 변환 */
+    public static String toBinaryString(int n) {
+        if (n <= 1) {
+            return String.valueOf(n);
+        }
+        return toBinaryString(n / 2) + String.valueOf(n % 2);
+    }
+
+
+    /* 10진수를 2진수 정수로 변환*/
+    public static int toBinaryInteger(int n) {
+        return Integer.parseInt(toBinaryString(n));
+    }
+
+
     /* 배열의 합 구하기 data[0] ~ data[n-1] 까지의 합 */
     public static int sum(int n, int[] data) {
         if (n <= 0) {
@@ -88,7 +103,7 @@ public class RecursiveExample {
     }
 
 
-    /* data[begin] ~ data[end] 사이에서 target을 검색한다 */
+    /* data[begin] ~ data[end] 사이에서 재귀를 통해 target을 검색한다 */
     public static int search(int[] data, int begin, int end, int target) {
         if (begin > end) {
             return -1;
