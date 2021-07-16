@@ -20,7 +20,6 @@ import java.util.concurrent.TimeUnit;
  *   - ExecutorService(주로사용): Executor을 상속 받은 인터페이스로, Callable도 실행할 수 있으며
  *                              Executor을 종료시키거나 여러 Callable를 동시애 실행하는 등의 기능 제공
  *   - ScheduledExecutorService: ExecutoreService를 상속받은 인터페이스, 특정 시간 이후 또는 주기적 작업 실행
- *
  */
 
 // ScheduledExecutorService --(구현)--> ExecutorService --(구현)--> Executor
