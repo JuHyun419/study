@@ -1,6 +1,6 @@
-## Spring Security를 이용한 로그인 처리
+# Spring Security를 이용한 로그인 처리
 
-### SpringBoot와 Spring Security 연동
+## SpringBoot와 Spring Security 연동
 - 스프링 시큐리티를 이용하는 프로젝트 생성
 - 스프링 시큐리티 커스터마이징
 - 프로젝트를 위한 JPA 처리
@@ -383,4 +383,213 @@ Controller
         log.info("member......");
         log.info("Auth Member: " + clubAuthMemberDto);
     }
+```
+
+
+<br><br>
+
+## 스프링 시큐리티 소셜 로그인 처리
+- 소셜 로그인: 기존 서비스의 인증을 사용하는 방식
+- 기존 서비스를 제공하는 업체들은 공통의 인증 방식을 제공 => OAuth(Open Authorization)
+- GCP에 프로젝트 생성
+- OAuth 클라이언트 ID 생성
+  - 리디렉션 URI 지정
+- 프로젝트에 OAuth 라이브러리 추가
+
+```java
+implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+```
+
+- 위에서 생성한 클라이언트 ID, 비밀번호 설정 & SecurityConfig 설정
+
+```java
+// properties 파일
+spring.security.oauth2.client.registration.google.client-id=클라이언트 ID
+spring.security.oauth2.client.registration.google.client-secret=클라이언트 PW
+spring.security.oauth2.client.registration.google.scope=email
+
+
+// SecurityConfig
+...
+http.oauth2login();
+```
+
+- DefaultOAuth2UserService(OAuth2UserService의 구현체)를 상속받는 Service 생성
+
+![image](https://user-images.githubusercontent.com/50076031/126033754-ef914926-c218-4672-9b3a-ac267a046222.png)
+
+- DTO(User)의 경우 OAuth2User를 구현
+  - OAuth2User의 경우 모든 인증 결과를 attributes라는 이름으로 가지고 있음(Map)
+  
+
+```java
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Service;
+import org.zerock.club.entity.ClubMember;
+import org.zerock.club.entity.ClubMemberRole;
+import org.zerock.club.repository.ClubMemberRepository;
+import org.zerock.club.security.dto.ClubAuthMemberDto;
+
+import java.util.Collection;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+@Log4j2
+@Service
+@RequiredArgsConstructor
+public class ClubOAuthUserDetailsService extends DefaultOAuth2UserService {
+
+    private final ClubMemberRepository clubMemberRepository;
+
+    private final PasswordEncoder passwordEncoder;
+
+    @Override
+    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+        log.info("userRequest: " + userRequest);
+
+        String clientName = userRequest.getClientRegistration().getClientName();
+        log.info("cilentName: " + clientName);
+        log.info(userRequest.getAdditionalParameters());
+
+        OAuth2User oAuth2User = super.loadUser(userRequest);
+        oAuth2User.getAttributes().forEach((k, v) -> log.info(k + ": " + v));
+        String email = null;
+
+        if (clientName.equals("Google")) {
+            email = oAuth2User.getAttribute("email");
+        }
+        log.info("email: " + email);
+        ClubMember member = saveSocialMember(email);
+        ClubAuthMemberDto clubAuthMember = new ClubAuthMemberDto(
+                member.getEmail(),
+                member.getPassword(),
+                true,
+                getAuthority(member.getRoleSet()),
+                oAuth2User.getAttributes()
+        );
+        clubAuthMember.setName(member.getName());
+        return clubAuthMember;
+    }
+
+    private ClubMember saveSocialMember(String email) {
+        Optional<ClubMember> result = clubMemberRepository.findByEmail(email, true);
+        if (result.isPresent()) {
+            return result.get();
+        }
+        ClubMember member = ClubMember.builder()
+                .email(email)
+                .password(passwordEncoder.encode("1111"))
+                .fromSocial(true)
+                .build();
+        member.addMemberRole(ClubMemberRole.USER);
+        clubMemberRepository.save(member);
+
+        return member;
+    }
+
+    private Collection<? extends GrantedAuthority> getAuthority(Set<ClubMemberRole> roleSet) {
+        return roleSet.stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.name()))
+                .collect(Collectors.toList());
+    }
+}
+
+```
+
+```java
+
+public class ClubAuthMemberDto extends User implements OAuth2User {
+
+    private String email;
+    private String password;
+    private String name;
+    private boolean fromSocial;
+    private Map<String , Object> attr;
+    
+    ...
+
+    // 모든 인증 결과
+    @Override
+    public Map<String, Object> getAttributes() {
+        return this.attr;
+    }
+}
+
+```
+
+#### Remember me(자동 로그인)
+- SecurityConfig에 설정 추가
+- 쿠키(HttpCookie)를 사용
+- 소셜 로그인의 경우 remember-me를 사용할 수 없음
+
+```java
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    private final int VALID_COOKIE_TIME = 60 * 60 * 7; // 7일
+        
+    ...
+        
+    http.rememberMe().tokenValiditySeconds(VALID_COOKIE_TIME).userDetailsService(userDetailsService);
+}
+```
+
+
+#### @PreAuthorize
+- 접근 제한이 필요한 컨트롤러의 메서드에 적용
+
+```java
+import lombok.extern.log4j.Log4j2;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.zerock.club.security.dto.ClubAuthMemberDto;
+
+@Controller
+@Log4j2
+@RequestMapping("/sample")
+public class SampleController {
+
+    // 로그인을 하지 않은 사용자도 접근 가능
+    @PreAuthorize("permitAll()")
+    @GetMapping("/all")
+    public void all() {
+        log.info("all....");
+    }
+
+    // 로그인한 사용자만 접근 가능
+    @GetMapping("/member")
+    public void member(@AuthenticationPrincipal ClubAuthMemberDto clubAuthMemberDto) {
+        log.info("member......");
+        log.info("Auth Member: " + clubAuthMemberDto);
+    }
+
+    // 관리자(admin) 권한을 가진 사용자만 접근 가능
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin")
+    public void admin() {
+        log.info("admin........");
+    }
+
+
+    // 특별 정해진 사용자만 해당 메서드를 실행하도록 설정 => "user95@zerock.org" 의 사용자만 해당 메소드 접근 가능
+    @PreAuthorize("#clubAuthMemberDto != null && #clubAuthMemberDto.username eq \"user95@zerock.org\"")
+    @GetMapping("/only")
+    public String memberOnly(@AuthenticationPrincipal ClubAuthMemberDto clubAuthMemberDto) {
+        log.info(clubAuthMemberDto);
+
+        return "/sample/admin";
+    }
+}
+
 ```

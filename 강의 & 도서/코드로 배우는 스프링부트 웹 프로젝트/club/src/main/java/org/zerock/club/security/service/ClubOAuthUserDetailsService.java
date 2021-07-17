@@ -29,7 +29,6 @@ public class ClubOAuthUserDetailsService extends DefaultOAuth2UserService {
 
     private final PasswordEncoder passwordEncoder;
 
-
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         log.info("userRequest: " + userRequest);
@@ -41,19 +40,14 @@ public class ClubOAuthUserDetailsService extends DefaultOAuth2UserService {
         log.info("=================================");
         OAuth2User oAuth2User = super.loadUser(userRequest);
         oAuth2User.getAttributes().forEach((k, v) -> log.info(k + ": " + v));
-
         String email = null;
 
         if (clientName.equals("Google")) {
             email = oAuth2User.getAttribute("email");
         }
         log.info("email: " + email);
-//        ClubMember member = saveSocialMember(email);
-//
-//        return oAuth2User;
 
         ClubMember member = saveSocialMember(email);
-
         ClubAuthMemberDto clubAuthMember = new ClubAuthMemberDto(
                 member.getEmail(),
                 member.getPassword(),
@@ -61,12 +55,12 @@ public class ClubOAuthUserDetailsService extends DefaultOAuth2UserService {
                 getAuthority(member.getRoleSet()),
                 oAuth2User.getAttributes()
         );
-
         clubAuthMember.setName(member.getName());
         return clubAuthMember;
     }
 
     private ClubMember saveSocialMember(String email) {
+        // 기존에 동일한 이메일로 가입한 회원이 존재하는 경우 => 해당하는 회원 조회
         Optional<ClubMember> result = clubMemberRepository.findByEmail(email, true);
         if (result.isPresent()) {
             return result.get();
