@@ -42,7 +42,7 @@ public class UploadController {
 
         for (MultipartFile uploadFile : uploadFiles) {
             // 이미지 파일만 업로드
-            if (!uploadFile.getContentType().startsWith("image")) {
+            if (!isImageFile(uploadFile.getContentType())) {
                 log.warn("This file is not image type");
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
@@ -51,10 +51,10 @@ public class UploadController {
             final String fileName = originalName.substring(originalName.lastIndexOf("\\") + 1);
 
             log.info("fileName: " + fileName);
-            
+
             // 날짜 폴더 생성
             final String folderPath = makeFolder(); // /Users/juhyun/Desktop/study/files/2021/06/28
-            
+
             // UUID
             final String uuid = UUID.randomUUID().toString();
 
@@ -78,8 +78,11 @@ public class UploadController {
                 e.printStackTrace();
             }
         }
-
         return new ResponseEntity<>(resultDtoList, HttpStatus.OK);
+    }
+
+    private boolean isImageFile(String contentType) {
+        return contentType.startsWith("image") || contentType.startsWith("images");
     }
 
     private String makeFolder() {
