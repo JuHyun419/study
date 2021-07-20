@@ -2,7 +2,7 @@
 
 [`HTTP`](https://github.com/JuHyun419/study/blob/master/computer-science/HTTP.md)
 
-[`HTTP`](https://github.com/JuHyun419/study/blob/master/computer-science/HTTP(3).md)
+[`HTTP(3)`](https://github.com/JuHyun419/study/blob/master/computer-science/HTTP(3).md)
 
 <br>
 
