@@ -44,9 +44,9 @@ Content-Length: 3423 // HTTP 헤더
 - 리퀘스트 메시지와 리스폰스 메시지에 포함된 엔티티에 사용되는 헤더
 - 콘텐츠 갱신 시간 등의 엔티티에 관한 정보를 부가
 
+<br>
 
-<details>
-  <summary>HTTP/1.1 헤더 필드 살펴보기(RFC2616)</summary>
+### HTTP/1.1 헤더 필드(RFC 2616)
 
 #### 일반적 헤더 필드(General Header Fields)
 |헤더 필드 명|설명|
@@ -117,7 +117,6 @@ Content-Length: 3423 // HTTP 헤더
 |[Last-Modified](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Last-Modified)|리소스의 최종 갱신 날짜|
 
 http://www.yes24.com/Product/Goods/15894097
-</details>
 
 <br>
 
