@@ -1,6 +1,5 @@
 package easy4;
 
-// TODO:
 public class Is_Subsequence_392 {
 
     public static boolean isSubsequence(String s, String t) {
@@ -10,10 +9,9 @@ public class Is_Subsequence_392 {
         for (char c : t.toCharArray()) {
             if (s.charAt(0) == c) {
                 s = s.substring(1);
-            }
-
-            if (s.length() == 0) {
-                return true;
+                if (s.length() == 0) {
+                    return true;
+                }
             }
         }
         return false;
