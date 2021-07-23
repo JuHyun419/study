@@ -12,7 +12,8 @@ public class Remove_Linked_List_Elements_203 {
         while (current != null) {
             if (current.val == val) {
                 prev.next = current.next;
-                current = prev.next;
+                current = current.next;
+                //current = prev.next;
             } else {
                 current = current.next;
                 prev = prev.next;
