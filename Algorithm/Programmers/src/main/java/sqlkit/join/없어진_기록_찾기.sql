@@ -1,4 +1,3 @@
--- TODO:
 -- 코드를 입력하세요
 SELECT b.ANIMAL_ID, b.NAME
 FROM ANIMAL_INS a
