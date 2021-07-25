@@ -32,6 +32,10 @@ public class CallableExample2 {
         for (Future<String> future : futures) {
             System.out.println(future.get());
         }
+
+        String any = executorService.invokeAny(Arrays.asList(hello, java, juhyun));
+        System.out.println(any);
+
         executorService.shutdown();
     }
 }
