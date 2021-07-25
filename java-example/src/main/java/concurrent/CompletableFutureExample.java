@@ -36,7 +36,7 @@ public class CompletableFutureExample {
         // 콜백 제공
         // thenApply(Function): 리턴값을 받아서 다른 값으로 바꾸는 콜백
         CompletableFuture<String> callbackFunctionFuture = CompletableFuture.supplyAsync(() -> {
-            System.out.println("Hello " + Thread.currentThread().getName());
+            System.out.println("Hello " + Thread.currentThread().getName()); // ForkJoinPool
             return "Hello";
         }).thenApply((s -> {
             System.out.println(Thread.currentThread().getName()); // main
