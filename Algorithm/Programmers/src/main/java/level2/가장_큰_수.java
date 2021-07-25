@@ -6,7 +6,6 @@ public class 가장_큰_수 {
 
     public String solution(int[] numbers) {
         String[] strArray = toStrArray(numbers);
-
         // 3, 30 ----> 330 vs 303 비교
         Arrays.sort(strArray, (s1, s2) -> (s2 + s1).compareTo(s1 + s2));
 
@@ -14,14 +13,7 @@ public class 가장_큰_수 {
         if (isFirstElementZero(strArray[0].charAt(0))) {
             return "0";
         }
-
-        StringBuilder sb = new StringBuilder();
-
-        for (String s : strArray) {
-            sb.append(s);
-        }
-
-        return sb.toString();
+        return maxNumber(strArray);
     }
 
     private String[] toStrArray(final int[] numbers) {
@@ -32,6 +24,14 @@ public class 가장_큰_수 {
 
     private boolean isFirstElementZero(char c) {
         return c == '0';
+    }
+
+    private String maxNumber(String[] array) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : array) {
+            sb.append(str);
+        }
+        return sb.toString();
     }
 
 }
