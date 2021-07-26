@@ -33,7 +33,7 @@ Content-Length: 3423 // HTTP 헤더
 - 리퀘스트 메시지와 리스폰스 메시지 둘 다 사용되는 헤더
 
 #### [리퀘스트 헤더 필드(Request Header Fields)](https://developer.mozilla.org/ko/docs/Glossary/Request_header)
-- 클라이언트에서 서버로 송싱된 리퀘스트 메시지에 사용되는 헤더
+- 클라이언트에서 서버로 송신된 리퀘스트 메시지에 사용되는 헤더
 - 리퀘스트의 부가적 정보, 클라이언트 정보, 리스폰스의 콘텐츠에 관한 우선 순위 등을 부가
 
 #### [리스폰스 헤더 필드(Response Header Fields)](https://developer.mozilla.org/ko/docs/Glossary/Response_header)
