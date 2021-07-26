@@ -19,9 +19,7 @@ public class 삼각_달팽이 {
                 arr[x++][y] = number++;
             }
             iterator--;
-
             if (iterator == 0) break;
-
             x --;
 
             // →
@@ -29,7 +27,6 @@ public class 삼각_달팽이 {
                 arr[x][++y] = number++;
             }
             iterator--;
-
             if (iterator == 0) break;
 
             // ↖
@@ -37,9 +34,7 @@ public class 삼각_달팽이 {
                 arr[--x][--y] = number++;
             }
             iterator--;
-
             if (iterator == 0) break;
-
             x ++;
         }
         return getAnswer(arr, length);
