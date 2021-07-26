@@ -118,6 +118,9 @@ Content-Length: 3423 // HTTP 헤더
 
 http://www.yes24.com/Product/Goods/15894097
 
+![image](https://user-images.githubusercontent.com/50076031/127074085-95c5ef36-9d49-414d-b422-d87ace2aa949.png)
+
+
 <br>
 
 #### [콘텐츠 협상](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
