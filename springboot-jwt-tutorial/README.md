@@ -1,4 +1,4 @@
-## JWT(Json Web Token)
+## [SpringBoot + JWT(Json Web Token)](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-jwt/dashboard)
 - JWT는 Header, Payload, Signature 3개의 부분으로 구성
 - JWT는 중앙의 인증서버, 데이터 스토어에 대한 의존성 없음, 시스템 수평 확장이 유리함
 - Base64 URL Safe Encoding -> URL, Cookie, Header 어디에서든 사용이 가능함
