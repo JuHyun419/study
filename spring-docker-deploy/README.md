@@ -186,7 +186,6 @@ docker login 명령어를 통해 로그인을 한 뒤 다시 push하면 정상�
 ![image](https://user-images.githubusercontent.com/50076031/126149179-03ad968a-458d-40c8-99f0-030b1a3cbd8c.png)
 최종적으로 AWS의 IP로 접속해보면 위와 같이 정상적으로 배포가 된 걸 확인할 수 있습니다.
 
-
 <br><br>
 
 ![image](https://user-images.githubusercontent.com/50076031/126149198-d028b366-0adf-4ca1-82cc-43001dcf9126.png)
@@ -198,4 +197,3 @@ docker login 명령어를 통해 로그인을 한 뒤 다시 push하면 정상�
 - https://class101.net/products/5fc4a3b4fc231b000d85661b
 - https://www.pinterest.co.kr/pin/984881012230730727/
 - https://docs.aws.amazon.com/ko_kr/corretto/latest/corretto-11-ug/docker-install.html
- 
