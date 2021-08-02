@@ -1,4 +1,4 @@
-package com.juhyun.dockerexample;
+package com.juhyun.dockerexample.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
