@@ -55,7 +55,7 @@
 
   - [`스프링부트 docker 배포`](https://github.com/JuHyun419/study/tree/master/spring-docker-deploy)
 
-  - [`SpringBoot + JWT 예제(작성중)`](https://github.com/JuHyun419/study/tree/master/springboot-jwt-tutorial)
+  - [`SpringBoot + JWT 예제`](https://github.com/JuHyun419/study/tree/master/springboot-jwt-tutorial)
 
 <br>
 
