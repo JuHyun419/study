@@ -25,6 +25,7 @@
 ### OS
 
   - [`운영체제`](https://github.com/JuHyun419/study/blob/master/computer-science/OS/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.md)
+  - [`프로세스, 스레드`](https://github.com/JuHyun419/study/blob/master/computer-science/OS/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%2C%EC%8A%A4%EB%A0%88%EB%93%9C.md)
 
 <br><br>
 
