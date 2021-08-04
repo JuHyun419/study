@@ -31,8 +31,6 @@
 
 
 ### 💻 강의 목록
-  - [`패스트캠퍼스 - 스프링 부트 프로젝트(어드민 페이지 개발)`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/(%ED%8C%A8%EC%BA%A0)%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%96%B4%EB%93%9C%EB%AF%BC)
-
   - [`패스트캠퍼스 - 시크릿코드: SpringBoot/JPA - 컨트롤러 구현 편`](https://github.com/JuHyun419/study/tree/master/fastcampus-secret-jpa)
 
   - [`인프런 - 스프링 핵심 원리 기본편`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/(%EC%9D%B8%ED%94%84%EB%9F%B0)%EC%8A%A4%ED%94%84%EB%A7%81%20%ED%95%B5%EC%8B%AC%20%EC%9B%90%EB%A6%AC%20%EA%B8%B0%EB%B3%B8%ED%8E%B8)
