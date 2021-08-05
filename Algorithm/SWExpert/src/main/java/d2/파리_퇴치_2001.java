@@ -2,7 +2,6 @@ package d2;
 
 import java.util.Scanner;
 
-// TODO
 public class 파리_퇴치_2001 {
     static Scanner scanner = new Scanner(System.in);
 
