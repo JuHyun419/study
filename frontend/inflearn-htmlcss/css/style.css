@@ -1,0 +1,100 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.bx-wrapper, .bx-viewport, .slider {
+    width: 100%;
+    height: 100%;
+}
+
+/* 부모 태그인 body, html에 width, height을 100%로 설정해야 자식 태그에도 설정됨 */
+.background_01 {
+    width: 100%;
+    height: 100%;
+    background: url("../images/a.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background_02 {
+    width: 100%;
+    height: 100%;
+    background: url("../images/b.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background_03 {
+    width: 100%;
+    height: 100%;
+    background: url("../images/c.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: url("../images/16.png");
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.contents {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    text-align: center;
+    z-index: 15;
+    font-family: "Malgun Gothic", sans-serif;
+}
+
+.contents_name {
+    margin-bottom: 25px;
+    font-size: 64px;
+    color: white;
+    font-weight: bold;
+}
+
+.contents_job {
+    margin-bottom: 50px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+/* 엔터로 인해 나타나는 불필요한 여백 제거 */
+.contents_list {
+    font-size: 0;
+}
+
+.contents_list > li {
+    margin-right: 20px;
+    display: inline-block;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.contents_list > li:last-child {
+    margin-right: 0px;
+}
+
+.contents_list > li > a {
+    color: white; /* inherit: 부모(li 태그)가 가진 속성(색상)을 상속 */
+}
+
+
+
+
+
+
+
+
+
+

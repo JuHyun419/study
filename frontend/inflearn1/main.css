@@ -1,0 +1,265 @@
+body {
+    margin: 0px;
+}
+
+.header {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    min-width: 1280px;
+    height: 5vh;
+    background-color:teal;
+}
+
+.nav {
+    position: relative;
+    top: 0px;
+    width: 1280px;
+    min-width: 1280px;
+    margin: 0px auto;
+    height: 100%;
+    background-color: white;
+}
+
+.main {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    min-width: 1280px;
+    min-height: 87vh;
+    background-color: rgb(240, 230, 230);
+}
+
+.footer {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    min-width: 1280px;
+    height: 8vh;
+    background-color: black;
+}
+
+.footer .footer-blog {
+    color: white;
+    font-size: 24px;
+}
+
+.header .nav .menu1 {
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 180px;
+    cursor: pointer;
+}
+
+.header .nav .menu2 {
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 140px;
+    cursor: pointer;
+}
+
+.header .nav .menu3 {
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 140px;
+    cursor: pointer;
+}
+
+.header .nav .menu3:hover {
+    color: violet;
+}
+
+.header .nav .menu3:active {
+    color: red;
+    background-color: tomato;
+}
+
+
+.header .nav .menu4 {
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 140px;
+    cursor: pointer;
+}
+
+.header .nav .menu5 {
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 140px;
+    cursor: pointer;
+}
+
+
+.main .section1 {
+    position: relative;
+    top: 0px;
+    margin: 0px auto;
+    width: 1280px;
+    height: 600px;
+    padding-top: 50px;
+}
+
+.main .section1 .img1 {
+    width: 1280px;
+    height: 600px;
+}
+
+
+.main .section2 {
+    position: relative;
+    top: 0px;
+    margin: 0px auto;
+    width: 1280px;
+    height: 400px;
+    padding-top: 50px;
+}
+
+.main .section2 .text1 {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    text-align: left;
+    width: 500px;
+}
+
+.main .section2 .img2 {
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url("img/3a50dcf743747e3af7d653ea37386aff.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main .section2 .text2 {
+    position: absolute;
+    top: 160px;
+    left: 400px;
+    width: 600px;
+    height: 400px;
+}
+
+
+.main .section3 {
+    position: relative;
+    top: 0px;
+    margin: 0px auto;
+    width: 1280px;
+    height: 300px;
+    padding-top: 50px;
+}
+
+
+.main .section4 {
+    position: relative;
+    top: 0px;
+    margin: 0px auto;
+    width: 1280px;
+    height: 400px;
+    padding-top: 30px;
+    border: 1px solid black;
+}
+
+.notice {
+    display: none;
+}
+
+.notice_background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.notice_border {
+    position: relative;
+    top: 22vh;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    z-index: 2;
+}
+
+/* 반응형 웹페이지 */
+@media all and (max-width: 1280px) {
+    .header .nav .menu2 {
+        display: none;
+    }
+
+    .header .nav .menu3{
+        display: none;
+    }
+
+    .header .nav .menu4 {
+        display: none;
+    }
+
+    .header .nav .menu5 {
+        display: none;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    
+}
+
+.main .section1 .img1 {
+    animation-name: myanimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.main .section1 .img1:hover {
+    transform: scale(1.5);
+    transition-delay: 0.5s;
+    transition-duration: 3s;
+}
+
+@keyframes myanimation{
+    from{
+        margin-left: 0px;
+    }
+
+    /* 애니메이션의 절반부터 */
+    50%{
+        margin-left: 200px;
+    }
+
+    to{
+        margin-left: 0px;
+    }
+}
+
+
+/* https://www.colorzilla.com/gradient-editor/ */
+.section2 .text2 .chef {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+47,cc97ed+100 */
+    background: #f0f9ff;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #f0f9ff 0%, #cbebff 47%, #cc97ed 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #f0f9ff 0%, #cbebff 47%, #cc97ed 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #f0f9ff 0%, #cbebff 47%, #cc97ed 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f9ff', endColorstr='#cc97ed', GradientType=1);
+    /* IE6-9 */
+
+}
