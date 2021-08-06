@@ -1,0 +1,19 @@
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+    background: #111
+  }
+  header {
+    width: 100%; height: 100px;
+  }
+  .slide {
+  width: 100%; height: 300px; background: #222;
+  }
+  .contents {
+    width: 100%; height: 200px;
+    background: #333;
+  }
+  footer {
+    width: 100%; height: 100px;
+    background: #444;
+  }

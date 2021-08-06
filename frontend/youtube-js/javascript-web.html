@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h2 id="hello">안녕하세용~</h2>
+    <div class="alert-box">Alert 박스</div>
+    <button onclick="show();">Button</button>
+
+    <script>
+        // ??? => 구글 검색, HTML 변경할 내용
+        //document.getElementById('???').??? = '???';
+        document.getElementById('hello').innerHTML = "Hello World~";
+        document.getElementById('hello').style.fontSize = "30px";
+
+        // UI 만드는 법
+        // 1. 미리 디자인해놓고 숨기기
+        // 2. 원할때 JS를 이용해서 보여줌
+        function show() {
+            let displayProp = document.getElementsByClassName('alert-box')[0].style.display;
+            if (displayProp === 'block') {
+                document.getElementsByClassName('alert-box')[0].style.display = 'none';
+            } else {
+                document.getElementsByClassName('alert-box')[0].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

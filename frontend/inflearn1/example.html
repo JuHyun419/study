@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css"> <!--CSS 적용: 외부 스타일시트-->
+    <title>Document</title>
+
+    <!--CSS 적용: 내부 스타일시트-->
+    <style>
+        body {
+            margin: 0px 0px 0px 20px;
+        }
+
+        p {
+            color: blue;
+        }
+
+        .div1 {
+            color: blueviolet;
+        }
+
+        #div2 {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!--CSS 적용: 인라인-->
+    <!--우선순위: 인라인 > 내부스타일 > 외부스타일-->
+    <!--주석 단축키: command + k + u-->
+    <div style="color: rgb(0, 255, 120)">div영역</div>
+    <div style="color: #ff00ff">div영역</div>
+    <div class="div1" id="div1">div class영역</div>
+    <div class="div2" id="div2">div class영역</div>
+
+
+    <p>테스트</p>
+    <h4>외부 스타일 시트</h4>
+
+</body>
+</html>

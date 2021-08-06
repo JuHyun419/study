@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #juhyun {
+        width: 132px;
+        background-color: #33CC33;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <p>CLick !!</p>
+    <button onclick="myFunction()">Button</button>
+    <br/><br/>
+    <div id="juhyun">Hello World</div>
+    <div id="myDiv">Hidden</div>
+
+    <!-- div>ul*4>li*4 -->
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div></div>
+    <p></p>
+    <span></span>
+
+</body>
+
+<script>
+    function myFunction() {
+        let element = document.getElementById("juhyun");
+        element.classList.toggle("myDiv");
+    }
+</script>
+</html>

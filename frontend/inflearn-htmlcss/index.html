@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="utf-8">
+        <title>심플포트폴리오</title>
+        <!-- link 순서도 중요함 -> 먼저 해석되는게 먼저 실행 -->
+        <!-- reset 적용 후 style 적용 -->
+        <link href="css/reset.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<!-- fontawesome cdn
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        
+-->
+        <link href="plugins/web-fonts-with-css/css/all.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $('.slider').bxSlider({
+                    controls: false,
+                    autoControls: true,
+                    pager: false,
+                    auto: true,
+                    pause: 2800
+                });
+            });
+        </script>
+    </head>
+    <body>
+       
+       <!-- background images -->
+       <div class="overlay"></div>
+        <div class="slider">
+            <div class="background_01"></div>
+            <div class="background_02"></div>
+            <div class="background_03"></div>
+        </div>
+        
+        <!-- background contents -->
+        <div class="contents">
+            <p class="contents_name">Lee, Ju Hyun</p>
+            <p class="contents_job">I'm Java Backend Developer</p>
+            
+            <!-- icon => https://fontawesome.com/ -->
+            <div class="contents_sns">
+                <ul class="contents_list">
+                    <li>
+                        <a href="https://github.com/JuHyun41q9">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://zzang9ha.tistory.com/">
+                            <i class="fab fa-blogger-b"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/%EC%A3%BC%ED%98%84-%EC%9D%B4-87176a19b/">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100007758400320">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
