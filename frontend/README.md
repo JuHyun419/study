@@ -157,6 +157,12 @@ ul>li*5
     <li></li>
 </ul>
 
+
+div.divClass
+<div class="divClass"></div>
+
+div#divClass
+<div id="divClass">
     
 ```
 
