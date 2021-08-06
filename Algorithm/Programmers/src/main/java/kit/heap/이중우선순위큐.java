@@ -7,7 +7,6 @@ import java.util.Queue;
 
 public class 이중우선순위큐 {
     public static int[] solution(String[] operations) {
-        int[] answer = {};
         Queue<Integer> minQueue = new PriorityQueue<>();
         Queue<Integer> maxQueue = new PriorityQueue<>(Collections.reverseOrder());
 
@@ -21,13 +20,9 @@ public class 이중우선순위큐 {
             } else if (operation.equals("D")) {
                 if (minQueue.isEmpty() || maxQueue.isEmpty()) continue;
                 if (number == 1) { // 최댓값 삭제
-                    int max = maxQueue.peek();
-                    maxQueue.poll();
-                    minQueue.remove(max);
+                    minQueue.remove(maxQueue.poll());
                 } else if (number == -1) { // 최솟값 삭제
-                    int min = minQueue.peek();
-                    minQueue.poll();
-                    maxQueue.remove(min);
+                    maxQueue.remove(minQueue.poll());
                 }
             }
         }
