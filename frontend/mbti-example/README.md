@@ -2,7 +2,6 @@
 
 ### [링크](https://juhyuns.netlify.app/)
 
-
 ### [Open Graph(오픈 그래프)](https://ogp.me/)
 - HTML 문서의 메타정보를 쉽게 표시하기 위해 제목, 미리보기, URL, 이미지 등의 다양한 요소들을 사용할 수 있는 프로토콜
 - 링크의 미리보기 제목, 설명, 이미지 등을 추가하는 페이스북의 프로토콜
@@ -181,3 +180,11 @@ status.style.width = (100 / endPoint) * (qIndex + 1) + '%'; // 상태바 구현
 ```
 
 <br>
+
+
+![image](https://user-images.githubusercontent.com/50076031/128464684-c781485b-a84d-4bf3-a584-8a270a56e29a.png)
+
+![image](https://user-images.githubusercontent.com/50076031/128464716-b3c9f98d-1248-4b4c-a692-9d17929c01a0.png)
+
+![image](https://user-images.githubusercontent.com/50076031/128464732-2dbc3b10-39ea-4dcb-bb86-db92f4580370.png)
+
