@@ -31,7 +31,7 @@
 
 
 ### 💻 강의 목록
-  - [`패스트캠퍼스 - 시크릿코드: SpringBoot/JPA - 컨트롤러 구현 편`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/(%ED%8C%A8%EC%BA%A0)secret-SpringBoot-JPA)
+  - [`패스트캠퍼스 - 시크릿코드: SpringBoot/JPA - 컨트롤러 구현 편`](https://github.com/JuHyun419/study/tree/master/books%26lectures/(%ED%8C%A8%EC%BA%A0)secret-SpringBoot-JPA)
 
   - [`인프런 - 스프링 핵심 원리 기본편`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/(%EC%9D%B8%ED%94%84%EB%9F%B0)%EC%8A%A4%ED%94%84%EB%A7%81%20%ED%95%B5%EC%8B%AC%20%EC%9B%90%EB%A6%AC%20%EA%B8%B0%EB%B3%B8%ED%8E%B8)
 
@@ -41,21 +41,29 @@
 
   - [`인프런 - 더 자바, 코드를 조작하는 다양한 방법`](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20&%20%EB%8F%84%EC%84%9C/(%EC%9D%B8%ED%94%84%EB%9F%B0)%EB%8D%94%20%EC%9E%90%EB%B0%94,%20%EC%BD%94%EB%93%9C%EB%A5%BC%20%EC%A1%B0%EC%9E%91%ED%95%98%EB%8A%94%20%EB%8B%A4%EC%96%91%ED%95%9C%20%EB%B0%A9%EB%B2%95)
 
+  - [`NEXTSTEP - 자바 플레이그라운드 with TDD, 클린코드`](https://github.com/JuHyun419/study/tree/master/books%26lectures/(%EB%84%A5%EC%8A%A4%ED%8A%B8%EC%8A%A4%ED%85%9D)%EC%9E%90%EB%B0%94%20%ED%94%8C%EB%A0%88%EC%9D%B4%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C)
+
+
+<br>
+
+
+### 〄 Spring
+  - [`Spring Security CSRF`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-security-csrf)
+    - [`정리 내용`](https://zzang9ha.tistory.com/341)
+
+  - [`Spring Docker 배포`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-docker-deploy)
+
+  - [`Spring JWT 예제`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-jwt-tutorial)
+
 
 <br>
 
 
 ### ⌨️ 실습 예제
-  - [`Spring Security CSRF`](https://github.com/JuHyun419/study/tree/master/security-csrf)
-    - [`정리 내용`](https://zzang9ha.tistory.com/341)
+  - [`Java Jsoup 크롤링`](https://github.com/JuHyun419/study/tree/master/java-example/inflearn-crawling-jsoup)
+    - [`정리 내용`](https://zzang9ha.tistory.com/337?category=887593)
 
   - [`짝 프로그래밍 - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/pair-programming-baseball)
-
-  - [`자바 플레이그라운드(NEXTSTEP) - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/Java-PlayGround-NEXTSTEP/java-baseball-playground)
-
-  - [`스프링부트 docker 배포`](https://github.com/JuHyun419/study/tree/master/spring-docker-deploy)
-
-  - [`SpringBoot + JWT 예제`](https://github.com/JuHyun419/study/tree/master/springboot-jwt-tutorial)
 
   - [`front 예제 코드`](https://github.com/JuHyun419/study/tree/master/frontend)
 
