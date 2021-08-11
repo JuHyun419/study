@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:id="A">아이디 바인딩</p>
+        <p v-bind:class="B">클래스 바인딩</p>
+        <p v-bind:style="C">스타일 바인딩</p>
+    </div>
+
+    <div id="app2">
+        {{ message }}
+    </div>
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                A: 10,
+                B: 'container',
+                C: 'color: blue'
+            }
+        });
+
+        new Vue({
+            el: '#app2',
+            data: {
+                message: 'Hello, Vue.js!'
+            }
+        });
+    </script>
+</body>
+</html>

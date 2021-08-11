@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Vue-Router</h1>
+        <p>
+            <!-- URL 값 변경하는 태그 => <a> 태그로 렌더링됨 -->
+            <router-link to="/main">Main 컴포넌트로 이동<br/></router-link>
+            <router-link to="/login">Login 컴포넌트로 이동</router-link>
+        </p>
+        
+        <!-- URL 값에 따라 갱신되는 화면 영역 -->
+        <router-view></router-view>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <script>
+        // Main, Login 컴포넌트 정의
+        var Main = { template: '<div>main</div>' };
+        var Login = { template: '<div>login</div>' };
+
+        // URL에 맞게 표시할 컴포넌트 지정
+        var routes = [
+            { path: '/main', component: Main},
+            { path: '/login', component: Login}
+        ];
+
+        // 뷰 라우터 정의
+        var router = new VueRouter({
+            // http://127.0.0.1:5500/vuejs/vue-router.html#/login
+            // 'history': http://127.0.0.1:5500/main
+            mode: 'history', // URL의 해시 값(#) 제거
+            routes
+        });
+
+        // 뷰 인스턴스에 라우터 추가
+        var app = new Vue({
+            router
+        }).$mount('#app'); // $mount - el속성과 동일하게 인스턴스를 화면에 붙이는 역할
+    </script>
+</body>
+</html>
