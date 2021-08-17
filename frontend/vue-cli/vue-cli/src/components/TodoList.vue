@@ -1,7 +1,7 @@
 <template>
     <section>
         <ul>
-            <li v-for="(todoItem, index) in todoItems" class="shadow" v-bind:key="todoItem">
+            <li v-for="(todoItem, index) in propsdata" class="shadow" v-bind:key="todoItem">
                 <i class="checkBtn fas fa-check" aria-hidden="true"></i>
                 {{ todoItem }}
                 <span class="removeBtn" type="button" v-on:click="removeTodo(todoItem, index)">
@@ -14,25 +14,31 @@
 
 <script>
 export default {
-    data() {
-        return {
-            todoItems: []
-        }
-    },
-    created() {
-        if (localStorage.length > 0) {
-            for (let i = 0; i < localStorage.length; i++) {
-                // data() 영역
-                this.todoItems.push(localStorage.key(i));
-            }
-        }
-    },
+    props: ['propsdata'],
+
+    /* data(), create() => App.vue로 이동(전부 관리) */
+    // data() {
+    //     return {
+    //         todoItems: []
+    //     }
+    // },
+    // created() {
+    //     if (localStorage.length > 0) {
+    //         for (let i = 0; i < localStorage.length; i++) {
+    //             // data() 영역
+    //             this.todoItems.push(localStorage.key(i));
+    //         }
+    //     }
+    // },
     methods: {
         removeTodo(todoItem, index) {
-            localStorage.removeItem(todoItem);
-            // splice: 자바스크립트 내장 API, index ~ 1만큼의 인덱스 삭제
-            this.todoItems.splice(index, 1);
-            console.log(todoItem + " " + index);
+            // localStorage.removeItem(todoItem);
+            // // splice: 자바스크립트 내장 API, index ~ 1만큼의 인덱스 삭제
+            // this.todoItems.splice(index, 1);
+            // console.log(todoItem + " " + index);
+
+            // 상위 컴포넌트에게 이벤트 전달
+            this.$emit('removeTodo', todoItem, index);
         }
     }
 }
