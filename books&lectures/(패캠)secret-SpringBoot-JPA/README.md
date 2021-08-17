@@ -100,3 +100,30 @@ public class UserCustomRepository {
 
 ### Q60) 좋아요를 가장 많이 한 사용자(n명) 목록을 리턴하는 API
 - Custom Repository, EntityManager, nativeQuery
+
+### Q61) 게시판 타입 추가 API
+- 동일한 게시판 제목 체크
+
+### Q63) 게시판 타입 삭제 API
+- Entity 기반 데이터베이스 스키마 설정
+- 게시글이 존재하면 삭제 X (게시글 : 게시판 = N:1 -- @ManyToOne)
+- H2, 파일로 스키마 생성 및 스키마 쿼리 확인 가능(테이블 생성한 스키마)
+
+```java
+// application 설정 
+ddl-auto: create
+generate-ddl: true
+
+// 위 설정으로 스키마 확인 후 데이터베이스 테이블 생성
+ddl-auto: none
+generate-ddl: false
+        
+// 게시판 타입에 해당하는 게시글 리스트
+List<Board> board = boardRepository.findByBoardType(boardType);
+
+...
+```
+
+### Q65) 게시판 타입의 사용여부 설정 API
+- 게시판의 사용여부에 따라 표시 & 숨기기
+- 필드 추가 후 필드로 true & false 설정
