@@ -4,6 +4,17 @@ import java.util.Arrays;
 
 // TODO:
 public class 입국심사 {
+    /**
+     * 문제 풀이
+     * 1) 이분탐색에 필요한 left, right 구하기
+     *  - left, right: 모든 사람이 입국심사를 받는데 걸리는 최소, 최대 시간
+     * 2) 이분탐색으로 주어진 시간(mid)동안 심사관이 몇명을 검사할 수 있는지 계산하기
+     * 3) 2)에서 계산 한 사람의 수와 n을 비교하기
+     * 4) 비교값을 통해 탐색의 범위 좁혀가기
+     *
+     * @param n: 입국심사를 기다리는 사람 수
+     * @param times: 각 심사관이 한 명을 심사하는데 걸리는 시간
+     */
     public long solution(int n, int[] times) {
         Arrays.sort(times);
         long answer = 0;
