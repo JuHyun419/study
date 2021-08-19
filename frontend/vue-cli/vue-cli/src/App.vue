@@ -1,6 +1,8 @@
 <template>
     <div id="app">
         <TodoHeader123></TodoHeader123>
+        <!-- v-on: addTodo: 자식 컴포넌트에서 $emit의 첫번째 인자 -->
+        <!-- "addTodo": 부모 컴포넌트 methods의 addTodo() 메소드 -->
         <TodoInput v-on:addTodo="addTodo"></TodoInput>
         <TodoList v-bind:propsdata="todoItems" v-on:removeTodo="removeTodo"></TodoList>
         <TodoFooter v-on:removeAll="clearAll"></TodoFooter>
