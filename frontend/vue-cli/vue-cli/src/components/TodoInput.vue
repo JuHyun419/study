@@ -19,11 +19,10 @@ export default {
             if (this.newTodoItem == "") {
                 alert("값을 입력해주세요!!");
             }
-            // localStorage.setItem(this.newTodoItem, this.newTodoItem);
             
             let todoItem = this.newTodoItem && this.newTodoItem.trim();
-            // 컴포넌트 간 이벤트 전달 => '하위 컴포넌트에서 발생시킨 이벤트를 상위 컴포넌트에 전달하여 메소드 동작'
-            this.$emit('addTodo', todoItem); // Event
+            // 컴포넌트 간 이벤트 전달 => '$emit: 하위 컴포넌트에서 발생시킨 이벤트를 상위 컴포넌트에 전달하여 메소드 동작'
+            this.$emit('addTodo', todoItem); // 부모에서 전달받을 이름, 전달할 데이터
             this.clearInput();
         },
         clearInput() {
