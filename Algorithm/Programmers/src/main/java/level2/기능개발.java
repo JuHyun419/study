@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-// TODO: 8월 중순 이후에 다시 풀어볼 것
 public class 기능개발 {
     private static final int PROCESS = 100;
 
