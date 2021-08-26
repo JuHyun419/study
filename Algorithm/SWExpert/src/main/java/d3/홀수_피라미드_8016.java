@@ -2,7 +2,6 @@ package d3;
 
 import java.util.Scanner;
 
-// TODO: 규칙 찾기
 public class 홀수_피라미드_8016 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
