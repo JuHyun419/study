@@ -6,7 +6,7 @@ http://www.yes24.com/Product/Goods/96051853
 
 ## :blue_book: 목차
 
-### [Part1 스프링 부트 도전하기](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20&%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/ex2)
+### [Part1 스프링 부트 도전하기](https://github.com/JuHyun419/study/tree/master/baooks%26lectures/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/ex2)
   - 프로젝트를 위한 준비
     - 개발 도구의 준비
     - Springinitializr를 이용한 프로젝트 생성
@@ -25,7 +25,7 @@ http://www.yes24.com/Product/Goods/96051853
     - Thymeleaf의 기본 객체와 LocalDateTime
     - Thymeleaf의 레이아웃
 
-### [Part2 Spring MVC/JPA/Thymeleaf 연습](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/guestbook)
+### [Part2 Spring MVC/JPA/Thymeleaf 연습](https://github.com/JuHyun419/study/tree/master/books%26lectures/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/guestbook)
   - 프로젝트 구조 만들기
     - 프로젝트의 와이어프레임
     - 자동으로 처리되는 날짜/시간 설정
@@ -38,7 +38,7 @@ http://www.yes24.com/Product/Goods/96051853
     - 방명록의 수정/삭제 처리
     - 검색 처리
 
-### [Part3 N:1(다대일) 연간관계 처리하기](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/board)
+### [Part3 N:1(다대일) 연간관계 처리하기](https://github.com/JuHyun419/study/tree/master/books%26lectures/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/board)
   - N:1(다대일) 연관관계
     - 연관관계와 관계형 데이터베이스 설계
     - 연관관계 테스트
@@ -50,7 +50,7 @@ http://www.yes24.com/Product/Goods/96051853
     - ReplyDTO와 ReplyService / ReplyController
     - 조회 화면에서 처리
 
-### [Part4 M:N(다대다) 관계와 파일 업로드 처리](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/mreview)
+### [Part4 M:N(다대다) 관계와 파일 업로드 처리](https://github.com/JuHyun419/study/tree/master/books%26lectures/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/mreview)
   - M:N(다대다) 관계의 설계와 구현
     - M:N(다대다) 관계의 특징
     - 예제 프로젝트 생성
@@ -63,7 +63,7 @@ http://www.yes24.com/Product/Goods/96051853
     - 조회 페이지와 영화 리뷰
     - Ajax로 영화 리뷰 처리
 
-### [Part5 Spring Security를 이용한 로그인 처리](https://github.com/JuHyun419/study/tree/master/%EA%B0%95%EC%9D%98%20%26%20%EB%8F%84%EC%84%9C/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/club)
+### [Part5 Spring Security를 이용한 로그인 처리](https://github.com/JuHyun419/study/tree/master/books%26lectures/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/club)
   - Spring Boot와 Spring Security 연동
     - 스프링 시큐리티를 이용하는 프로젝트 생성
     - 스프링 시큐리티 커스터마이징
