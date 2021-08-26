@@ -2,7 +2,6 @@ package d3;
 
 import java.util.Scanner;
 
-// TODO:
 public class 상원이의_연속_합_7510 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

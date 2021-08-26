@@ -2,7 +2,6 @@ package d3;
 
 import java.util.Scanner;
 
-// TODO:
 public class 농작물_수확하기_2805 {
 
     static Scanner scanner = new Scanner(System.in);
