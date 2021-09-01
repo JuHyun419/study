@@ -327,7 +327,7 @@ https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/proxy.html
 
 #### 클래스 타입의 프록시가 필요하다면?
   - [CGlib](https://github.com/cglib/cglib/wiki) 의 MethodInterceptor 참고
-  - CGlib: 스프링, 하이버네티으가 사용하는 라이브러리
+  - CGlib: 스프링, 하이버네이트 사용하는 라이브러리
 
 ### 다이나믹 프록시(Dynamic Proxy) 정리
   - 런타임에 인터페이스 또는 클래스의 프록시 인스턴스 및 클래스를 만들어 사용하는 프로그래밍 기법
