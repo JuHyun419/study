@@ -1,6 +1,6 @@
 package weeklychallenge;
 
-public class second {
+public class Second {
     public static String solution(int[][] scores) {
         int[] counts = new int[scores.length]; // 평균 구할 때 인원 제외할 배열
         fillZeroMaxOrMinScore(scores, counts);
