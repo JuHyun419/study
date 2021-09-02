@@ -1,6 +1,6 @@
 package weeklychallenge;
 
-public class first {
+public class First {
     public long solution(int price, int money, int count) {
         long sum = 0;
         for (int i = 1; i <= count; i++) {
