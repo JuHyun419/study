@@ -3,7 +3,7 @@ package string;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO:
+// TODO: 9월말~ 풀어보기 - O(n)
 public class Word_Pattern_290 {
     public boolean wordPattern(String pattern, String s) {
         Map<Character, String> charMap = new HashMap<>();

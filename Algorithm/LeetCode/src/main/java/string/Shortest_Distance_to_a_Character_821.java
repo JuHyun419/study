@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-// TODO: 다른 풀이 확인
 public class Shortest_Distance_to_a_Character_821 {
     public static int[] shortestToChar(String s, char c) {
         int[] answer = new int[s.length()];

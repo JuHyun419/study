@@ -3,7 +3,6 @@ package string;
 import java.util.HashMap;
 import java.util.Map;
 
-// TODO:
 public class Redistribute_Characters_to_Make_All_String_Equals_1897 {
     public static boolean makeEqual(String[] words) {
         // 전체 문자열 길이의 합 비교
