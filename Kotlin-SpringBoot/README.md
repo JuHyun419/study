@@ -122,6 +122,98 @@ return UserResponse().apply {
 
 ![image](https://user-images.githubusercontent.com/50076031/131870747-69b64f9e-821b-4509-8785-40ce1b7bc36d.png)
 
+<br>
+
+### Custom Valid @Annotation
+- 기존 코드
+
+```kotlin
+
+import ...
+
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
+// @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class) deprecated
+data class UserRequest(
+
+        ...
+
+        var createdAt: String? = null // yyyy-MM-dd HH:mm:ss
+)
+
+    /* StringFormatDateTime, Valid로 대체 */
+    @AssertTrue(message = "생성일자의 패턴은 yyyy-MM-dd HH:mm:ss 여야 합니다.")
+    private fun isValidCreatedAt(): Boolean {
+        try {
+            LocalDateTime.parse(this.createdAt, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+            return true
+        } catch (e: Exception) {
+            return false
+        }
+    }
+```
+
+<br>
+
+- Custom
+
+```kotlin
+
+/* annotation */
+import org.juhyun.kotlinspringboot.valid.StringFormatDateTimeValid
+import javax.validation.Constraint
+import javax.validation.Payload
+import kotlin.reflect.KClass
+
+@Constraint(validatedBy = [StringFormatDateTimeValid::class])
+@Target(
+        AnnotationTarget.FIELD,
+        AnnotationTarget.PROPERTY_GETTER,
+        AnnotationTarget.PROPERTY_GETTER
+)
+@Retention(AnnotationRetention.RUNTIME)
+@MustBeDocumented
+annotation class StringFormatDateTime(
+        val pattern: String = "yyyy-MM-dd HH:mm:ss",
+        val message: String = "시간 형식이 유효하지 않습니다",
+        val groups: Array<KClass<*>> = [],
+        val payload: Array<KClass<out Payload>> = []
+)
+
+
+/* Valid Class */
+import org.juhyun.kotlinspringboot.annotation.StringFormatDateTime
+import java.lang.Exception
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import javax.validation.ConstraintValidator
+import javax.validation.ConstraintValidatorContext
+
+class StringFormatDateTimeValid : ConstraintValidator<StringFormatDateTime, String> {
+
+    private var pattern: String? = null
+
+    override fun initialize(constraintAnnotation: StringFormatDateTime?) {
+        this.pattern = constraintAnnotation?.pattern
+    }
+
+    // 유효성 검사
+    override fun isValid(value: String?, context: ConstraintValidatorContext?): Boolean {
+        try {
+            LocalDateTime.parse(value, DateTimeFormatter.ofPattern(pattern))
+            return true
+        } catch (e: Exception) {
+            return false
+        }
+    }
+
+}
+
+
+/* UserRequest */
+@field:StringFormatDateTime(pattern = "yyyy-MM-dd HH:mm:ss", message = "패턴이 올바르지 않습니다.")
+var createdAt: String? = null // yyyy-MM-dd HH:mm:ss
+```
+
 <br><br>
 
 ### References
