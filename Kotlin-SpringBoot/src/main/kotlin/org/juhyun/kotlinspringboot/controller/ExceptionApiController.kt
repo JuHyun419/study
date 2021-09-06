@@ -5,8 +5,6 @@ import org.juhyun.kotlinspringboot.model.exception.Error
 import org.juhyun.kotlinspringboot.model.exception.ErrorResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.validation.BindingResult
-import org.springframework.validation.FieldError
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.MethodArgumentNotValidException
 import org.springframework.web.bind.annotation.*
@@ -30,7 +28,7 @@ class ExceptionApiController {
         return "Hello"
     }
 
-    /* ErrorResponse API
+/* ErrorResponse API
 {
     "result_code": "FAIL",
     "http_status": "400",
@@ -46,8 +44,7 @@ class ExceptionApiController {
         }
     ]
 }
- */
-
+*/
     @GetMapping
     fun get(
             @NotBlank @Size(min = 2, max = 6) @RequestParam name: String,
