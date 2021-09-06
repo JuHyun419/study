@@ -24,9 +24,10 @@ import javax.validation.constraints.Size
 class ExceptionApiController {
 
     @GetMapping("/hello")
-    fun hello() {
+    fun hello(): String {
         val list = mutableListOf<String?>()
-        println(list[0])
+        //println(list[0])
+        return "Hello"
     }
 
     /* ErrorResponse API
@@ -66,6 +67,38 @@ class ExceptionApiController {
     fun post(@Valid @RequestBody userRequest: UserRequest): UserRequest {
         println(userRequest)
         return userRequest
+    }
+
+    @ExceptionHandler(ConstraintViolationException::class)
+    fun constraintViolationException(e: ConstraintViolationException, request: HttpServletRequest): ResponseEntity<ErrorResponse>? {
+        // 1. 에러 분석
+        val errors = mutableListOf<Error>()
+        e.constraintViolations.forEach {
+            val error = Error().apply {
+                this.field = it.propertyPath.last().name
+                this.message = it.message
+                this.value = it.invalidValue
+            }
+            errors.add(error)
+        }
+
+        // 2. ErrorResponse
+        val errorResponse = getErrorResponse(request, errors)
+
+        // ResponseEntity
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse)
+    }
+
+    private fun getErrorResponse(request: HttpServletRequest, errors: MutableList<Error>): ErrorResponse {
+        return ErrorResponse().apply {
+            this.resultCode = "FAIL"
+            this.httpStatus = HttpStatus.BAD_REQUEST.value().toString()
+            this.httpMethod = request.method
+            this.message = "요청에 에러가 발생하였습니다."
+            this.path = request.requestURI.toString()
+            this.timestamp = LocalDateTime.now()
+            this.errors = errors
+        }
     }
 
 }
