@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter
 import javax.validation.constraints.*
 import kotlin.math.min
 
-@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
+//@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 // @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class) deprecated
 data class UserRequest(
 
