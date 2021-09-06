@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers
@@ -17,7 +18,7 @@ import org.springframework.util.LinkedMultiValueMap
 class ExceptionApiControllerTest {
 
     @Autowired
-    lateinit var mockMvc: MockMvc
+    private lateinit var mockMvc: MockMvc
 
     @Test
     fun helloTest() {
@@ -50,7 +51,7 @@ class ExceptionApiControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.get(uri).queryParams(queryParams))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest)
-                .andExpect(MockMvcResultMatchers.content().contentType("application/json"))
+                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andDo(MockMvcResultHandlers.print())
     }
 
@@ -88,8 +89,8 @@ class ExceptionApiControllerTest {
         mockMvc.perform(
                 MockMvcRequestBuilders.post(uri)
                         .content(json)
-                        .contentType("application/json")
-                        .accept("application/json"))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk)
                 .andExpect(MockMvcResultMatchers.jsonPath("\$.name").value("JuHyun"))
                 .andExpect(MockMvcResultMatchers.jsonPath("\$.age").value("20"))
@@ -116,8 +117,8 @@ class ExceptionApiControllerTest {
         mockMvc.perform(
                 MockMvcRequestBuilders.post(uri)
                         .content(json)
-                        .contentType("application/json")
-                        .accept("application/json"))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest)
                 .andDo(MockMvcResultHandlers.print())
     }
