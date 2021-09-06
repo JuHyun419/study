@@ -1,14 +1,7 @@
 package org.juhyun.kotlinspringboot.model
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategies
-import com.fasterxml.jackson.databind.PropertyNamingStrategy
-import com.fasterxml.jackson.databind.annotation.JsonNaming
 import org.juhyun.kotlinspringboot.annotation.StringFormatDateTime
-import java.lang.Exception
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import javax.validation.constraints.*
-import kotlin.math.min
 
 //@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
 // @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy::class) deprecated
