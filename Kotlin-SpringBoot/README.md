@@ -1,6 +1,6 @@
 # Kotlin + Spring Boot
 
-### ?(Null Safe), ?.(Safe Call)
+## *?(Null Safe), ?.(Safe Call)*
 
 ```kotlin
 /* ?(Null Safe) */
@@ -14,13 +14,13 @@ println(memo.length)  // "Memo"
 ```
 <br>
 
-### val(Immutable) vs var(Mutable)
+## *val(Immutable) vs var(Mutable)*
 - val: 초기값 할당 후 변경 불가능(Java final)
 - var: 초기값 할당 후 변경 가능
 
 <br>
 
-### MutableList, List
+## *MutableList, List*
 - 읽기 전용 변수(val), 수정 가능 변수(var)
 - 리스트도 읽기 전용 리스트(List), 수정 가능한 리스트(MutableList)
 - 읽기 전용 리스트(List)는 선언할 때 넣은 데이터를 수정, 삭제, 변경이 불가능
@@ -51,7 +51,7 @@ fun main() {
 
 <br>
 
-### apply
+## *apply*
 - 람다 내부에서 수신 객체 자신을 다시 반환하는 경우에 사용
 
 ```kotlin
@@ -124,7 +124,7 @@ return UserResponse().apply {
 
 <br>
 
-### Custom Valid @Annotation
+### *Custom Valid @Annotation*
 - 기존 코드
 
 ```kotlin
@@ -212,6 +212,72 @@ class StringFormatDateTimeValid : ConstraintValidator<StringFormatDateTime, Stri
 /* UserRequest */
 @field:StringFormatDateTime(pattern = "yyyy-MM-dd HH:mm:ss", message = "패턴이 올바르지 않습니다.")
 var createdAt: String? = null // yyyy-MM-dd HH:mm:ss
+```
+
+<br>
+
+## *배열*
+
+### arrayOf()
+- 배열에 저장할 값들을 넣어서 반환
+- 타입을 선언하지 않으면 여러 자료형을 혼합해서 사용 가능
+```kotlin
+val arr = arrayOf(1, 0.5, "JuHyun")
+arr.forEach { println(it) } // 1, 0.5, JuHyun
+```
+
+<br>
+
+### arrayOf<>()
+- arrayOf()에서 제네릭으로 타입 지정
+    - 타입 생략 가능 --> arrayOf()
+- arrayOf<Int>, arrayOf<String>, arrayOf<Char> ...
+```kotlin
+val arrayInt = arrayOf<Int>(1, 2, 3)
+val arrayString = arrayOf<String>("a", "b", "c")
+```
+
+<br>
+
+### intArrayOf, charArrayOf ...
+```kotlin
+var intArray = intArrayOf(1, 2, 3)
+var charArray = charArrayOf('a', 'b', 'c')
+```
+
+<br>
+
+### Array 객체 생성
+```kotlin
+val array = Array(10) { 1 }
+println(array.contentToString())
+// [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+val array2 = IntArray(5, {0}) // IntArray(5) { 0 }                            
+println(array2.contentToString())
+// [0, 0, 0, 0, 0]
+
+val array3 = Array(5) { i -> i }
+println(array3.contentToString()) 
+// [0, 1, 2, 3, 4]
+
+val array4 = Array(5) {i -> i * i }
+println(array4.contentToString())
+// [0, 1, 4, 9, 16]
+```
+
+<br>
+
+### 다차원 배열(헷갈린다 ;;;;;;;;;)
+```kotlin
+// 2차원 배열
+var array = Array(3, { IntArray(3) }) // 3x3
+var array2 = arrayOf(arrayOf(0, 0, 0), arrayOf(0, 0, 0), arrayOf(0, 0, 0)) //3x3 위와 같음
+
+// 3차원 배열
+val array3 = Array(3) { Array(3) { Array(2) { 1 } } }
+println(array7.contentDeepToString())
+// [[[1, 1], [1, 1], [1, 1]], [[1, 1], [1, 1], [1, 1]], [[1, 1], [1, 1], [1, 1]]]
 ```
 
 <br><br>
