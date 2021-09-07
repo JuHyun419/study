@@ -29,6 +29,8 @@
 
   - [`프로세스, 스레드`](https://github.com/JuHyun419/study/blob/master/computer-science/OS/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%2C%EC%8A%A4%EB%A0%88%EB%93%9C.md)
 
+  - [`프로세스상태`](https://github.com/JuHyun419/study/blob/master/computer-science/OS/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%83%81%ED%83%9C.md)
+
 <br><br>
 
 - https://github.com/cobak-study/computer-science
