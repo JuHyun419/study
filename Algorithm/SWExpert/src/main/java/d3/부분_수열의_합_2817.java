@@ -2,7 +2,6 @@ package d3;
 
 import java.util.Scanner;
 
-// TODO:
 public class 부분_수열의_합_2817 {
 
     private static int N;
