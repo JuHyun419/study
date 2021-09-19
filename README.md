@@ -59,6 +59,9 @@
 
   - [`Spring AOP`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-aop)
 
+  - [`Spring-Validation Test`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-validation)
+    - [`정리 내용`](https://zzang9ha.tistory.com/383)
+
 
 <br>
 
