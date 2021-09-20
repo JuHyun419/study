@@ -3,7 +3,6 @@ package string2;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: 9월말~ 풀어보기
 public class Partition_Labels_763 {
     public List<Integer> partitionLabels(String s) {
         int[] alphabet = new int[26];
