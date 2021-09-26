@@ -1,5 +1,8 @@
 ## 인프런 사이트 크롤링
-### [`블로그 정리`](https://zzang9ha.tistory.com/337?category=887593)
+
+- [`[Java] - Jsoup을 이용한 크롤링(feat. 인프런)`](https://zzang9ha.tistory.com/337?category=887593)
+
+<br>
 
 ```java
 // 크롤링할 데이터
