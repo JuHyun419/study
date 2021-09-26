@@ -51,7 +51,6 @@
 
 ### 〄 Spring
   - [`Spring Security CSRF`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-security-csrf)
-    - [`정리 내용`](https://zzang9ha.tistory.com/341)
 
   - [`Spring Docker 배포`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-docker-deploy)
 
@@ -60,8 +59,6 @@
   - [`Spring AOP`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-aop)
 
   - [`Spring-Validation Test`](https://github.com/JuHyun419/study/tree/master/spring-example/spring-validation)
-    - [`정리 내용`](https://zzang9ha.tistory.com/383)
-
 
 <br>
 
