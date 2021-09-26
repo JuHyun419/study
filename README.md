@@ -65,7 +65,6 @@
 
 ### ⌨️ 실습 예제
   - [`Java Jsoup 크롤링`](https://github.com/JuHyun419/study/tree/master/java-example/inflearn-crawling-jsoup)
-    - [`정리 내용`](https://zzang9ha.tistory.com/337?category=887593)
 
   - [`짝 프로그래밍 - 숫자야구게임`](https://github.com/JuHyun419/study/tree/master/pair-programming-baseball)
 
