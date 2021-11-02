@@ -33,6 +33,8 @@
 
   - [`스케쥴링`](https://github.com/JuHyun419/study/blob/master/computer-science/OS/%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%A7%81.md)
 
+  - [`뮤텍스, 세마포어`](https://github.com/JuHyun419/study/blob/7c14d4c65c868b66985859113a4c78d657267b45/computer-science/OS/%EB%AE%A4%ED%85%8D%EC%8A%A4%2C%EC%84%B8%EB%A7%88%ED%8F%AC%EC%96%B4.md)
+
 <br><br>
 
 - https://github.com/cobak-study/computer-science
