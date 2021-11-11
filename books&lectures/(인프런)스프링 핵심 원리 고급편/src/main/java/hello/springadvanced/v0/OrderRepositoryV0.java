@@ -24,4 +24,30 @@ public class OrderRepositoryV0 {
             e.printStackTrace();
         }
     }
+
+    public void save2(String s) {
+        if (s == "테스트") {
+            System.out.println("~");
+        }
+
+        if (s.equals("test")) {
+            System.out.println();
+
+        }
+
+        //TEST
+        // test
+
+
+
+    }
+
+    public static void main(String[] args) {
+        OrderRepositoryV0 ov = new OrderRepositoryV0();
+        String test = "Aa";
+         ov.save("test");
+
+        System.out.println("CodeGuru Test");
+        ov.save("ex");
+    }
 }
