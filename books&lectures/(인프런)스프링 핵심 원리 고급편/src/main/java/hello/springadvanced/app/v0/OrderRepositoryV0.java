@@ -1,4 +1,4 @@
-package hello.springadvanced.v0;
+package hello.springadvanced.app.v0;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -13,7 +13,6 @@ public class OrderRepositoryV0 {
         if ("ex".equals(itemId)) {
             throw new IllegalStateException("예외 발생!");
         }
-
         sleep(1000);
     }
 
@@ -23,31 +22,5 @@ public class OrderRepositoryV0 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public void save2(String s) {
-        if (s == "테스트") {
-            System.out.println("~");
-        }
-
-        if (s.equals("test")) {
-            System.out.println();
-
-        }
-
-        //TEST
-        // test
-
-
-
-    }
-
-    public static void main(String[] args) {
-        OrderRepositoryV0 ov = new OrderRepositoryV0();
-        String test = "Aa";
-         ov.save("test");
-
-        System.out.println("CodeGuru Test");
-        ov.save("ex");
     }
 }
