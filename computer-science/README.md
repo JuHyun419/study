@@ -12,6 +12,8 @@
 
   - [`HTTP(3)`](https://github.com/JuHyun419/study/blob/master/computer-science/Network/HTTP(3).md)
 
+  - [`HTTP와HTTPS`](https://github.com/JuHyun419/study/blob/master/computer-science/Network/HTTP%EC%99%80HTTPS.md)
+
 
 <br>
 
