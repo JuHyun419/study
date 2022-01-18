@@ -39,7 +39,8 @@ DBMS나 기타 외부와의 접속이 빈번하게 필요한 시스템에는 반
 ## 🤔 DBCP(DataBase Connection Pool)의 옵션
 이제까지 DBCP의 개념과 구조, 사용 이유에 대해 살펴보았습니다.  
 [Apache의 Commons DBCP](https://commons.apache.org/proper/commons-dbcp/) 의 경우 설정할 수 있는 옵션은 다음과 같습니다.(Commons DBCP 1.x 기준입니다.)  
-> Commons DBCP는, 커넥션 풀 구현체중 가장 많이 쓰이는 오픈소스 입니다.
+> Commons DBCP는, 커넥션 풀 구현체중 가장 많이 쓰이는 오픈소스 입니다.  
+> [Spring Boot 2.0부터는 HikariCP](https://www.concretepage.com/spring-boot/spring-boot-hikaricp#:~:text=HikariCP%20is%20fast%2C%20simple%2C%20reliable,because%20HikariCP%20offers%20superior%20performance.)를 채택해서 커넥션 풀을 관리합니다.(Tomcat Pool -> HikariCP)
 
 <img width="640" alt="캡쳐1" src="https://user-images.githubusercontent.com/50076031/128815728-c30abd0e-c6b1-466c-aac1-b827a18febe4.png">
 
