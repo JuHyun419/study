@@ -27,6 +27,8 @@
   - [`코드로 배우는 스프링부트 웹 프로젝트`](https://github.com/JuHyun419/study/tree/master/books%26lectures/%EC%BD%94%EB%93%9C%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8%20%EC%9B%B9%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
 
   - [`Do it! Vue.js 입문`](https://github.com/JuHyun419/study/tree/master/frontend/vuejs)
+
+  - [`모던 자바 인 액션`](https://github.com/JuHyun419/study/tree/master/books%26lectures/Modern-Java-In-Action)
   
 
 <br>
