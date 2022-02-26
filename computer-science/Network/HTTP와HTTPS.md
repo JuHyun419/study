@@ -40,7 +40,8 @@
 > TLS(Transport Layer Secure)
 > - 데이터 무결성을 제공하기 때문에 데이터가 전송 중에 수정되거나 손상되는것을 방지
 > - 사용자가 자신이 의도하는 웹사이트와 통신하고 있음을 입증하는 인증 기능도 제공
-> - [SSL vs TLS](https://ko.gadget-info.com/difference-between-ssl)
+> - [SSL vs TLS](https://ko.gadget-info.com/difference-between-ssl)  
+> SSL은 목적을 달성하기위한 가장 중요한 방법이며 모든 브라우저에서 지원됩니다. TLS는 보안 및 개인 정보 보호 기능이 강화 된 후속 인터넷 표준입니다.
 
 
 ### HTTPS는 SSL의 껍질을 덮어쓴 HTTP
