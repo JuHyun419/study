@@ -23,7 +23,7 @@ public class 공통원소_구하기 {
             }
 
             if (a[index1] > b[index2]) index2++;
-            else index1 ++;
+            else index1++;
         }
         return list;
     }
